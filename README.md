@@ -65,3 +65,13 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - File Storage: Works as a network file share (SMB 3.0). Also a REST API. Useful for legacy systems. Can create directories. Each file can be up to 1TB. Files are addressable by a private URL.
 - SQL Server VM: IaaS model for SQL Server. Needs a license.
 - Securing SQL Server: By default only the owner of the storage account has access. Assign right roles. Avoid anonymous access. Whitelist IP's and use ACL (Access control lists). Encryption (can use SSL as well). Shared Access Signature (SAS) can give temporary access to storage. Shared Access Policy (SAP) can be given to users and revoked as needed.
+
+### Azure Mobile Apps
+- Azure Mobile Apps: Provides capabilities (PaaS services) to make the development of Mobile Apps much more easy.
+- Cross Platform Applications: Cross platform support (Windows, iOS, Andriod, HTML5, Xamarin, Apache Cordova.
+- Offline Sync: allows to use the mobile app offline and sync mobile client data once it becomes online. Uses implicit push and incremental pull model.
+- Extend Mobile Apps: Services to provide essential functions for mobile apps, such as custom authentication push, notifications, data storage.
+- Security: Two levels: Infrastrcture and platform security, Application Security. Infrastrcture and platform security = managed by Microsoft. Application Security = responsibility of developer.
+
+### Azure Notification Hub
+- Service that takes care of all the platforms (iOS, Android, Windows Mobile, Kindle). Uses single API. Also supports .NET, PHP, Java, NodeJS. Can target single user, group or all users. Allows tagging for sementation. Can security notification, so the app pulls the data secure after receiving the notification.
