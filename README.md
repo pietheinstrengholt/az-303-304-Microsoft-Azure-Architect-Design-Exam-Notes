@@ -51,3 +51,17 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Data security in transit and at rest: SSL/TLS (Https). For at rest the Azure Storage Service Encryption (SSE) is used. 256-bit AES. ARM only. For Block blobs, page blobs and append blobs. Client side encryption is possible as well. Azure Disk Encryption = Encrypt the disks used by Virtual Machines.
 - Azure Operations Management Suite: A Suite to monitor traffic, see unusual things, etc.
 
+### Role-Based Security
+- Concept is to give roles access rights and assign the roles to groups and users.
+- Standard roles: owner, contributor, reader (read only)
+- Access inheritance. Azure subscription belongs to only one AAD. Azure group belongs to only one subscription. Resource belongs only to one group. 
+
+### Azure Data Storage
+- Table Storage: Structured, Schemaless, name-value pair storage (no RDBMS!). Rows are called entities. PartionKey + RowKey are the primairy key. Entities can have up to 255 properties (columns). Timestamp is always included. 
+- SQL Storage: Relational SQL storage. Elastic and auto-scales. Azure hosted database. Geo-replication (optional).
+- DocumentDB Storage: NoSQL storage for JSON objects.
+- Blob Storage: Container model, Containers have security. Blob = binary large object. 500TB capacity. Block blobs: Optimized for streaming and storing objects in the Cloud. Append blobs: Similar to block blobs but optimized for append only (log files). Page blobs: Good for random writes, represents harddisk, virtual machine storage.
+- Queue Storage: Max 64gb in size. Invisibility behavior, read and then becomes invisible for a period of time.
+- File Storage: Works as a network file share (SMB 3.0). Also a REST API. Useful for legacy systems. Can create directories. Each file can be up to 1TB. Files are addressable by a private URL.
+- SQL Server VM: IaaS model for SQL Server. Needs a license.
+- Securing SQL Server: By default only the owner of the storage account has access. Assign right roles. Avoid anonymous access. Whitelist IP's and use ACL (Access control lists). Encryption (can use SSL as well). Shared Access Signature (SAS) can give temporary access to storage. Shared Access Policy (SAP) can be given to users and revoked as needed.
