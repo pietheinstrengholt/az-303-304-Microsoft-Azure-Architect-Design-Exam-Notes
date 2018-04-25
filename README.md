@@ -138,3 +138,4 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Azure Monitor: Allows collection of metrics, activity logs and diagnostic logs. Can generate alerts and notifications based on all the resources. Is a more basic monitoring.
 - Azure Log Analytics: Infrastructure monitoring tool for logging at infra level. Can analysis on-prem and cloud log files and stores the result central. Can connect to System Center Operations Manager (SCOM) or to a VM directly. Comparable to Splunk. 
 - Azure Advisor: Azure Advisor is a tool that makes recommendations based on the usage and resources. High availability, security, performance and costs.
+- Azure Data Catalog: Enterprise metadata catalog of all data sources. contains definitions, locations, tags and other information. Can be used to restrict access.
