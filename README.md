@@ -111,3 +111,10 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Azure Machine Learning: Cloud service that allow to create jobs to predictive do analytics. Examines large amounts of data to detect patterns, generate code to recognize those patterns.
 - Big Data: HDInsight, uses Apache Hadoop (HortonWorks). Manage, Analyze and Report.
 - Azure Search: PaaS service, integrated with REST API's and .NET SDK. Supports mulitple languages, simple query syntax, suggestions, highlight matches, facets and filters.
+
+### Scalability and Performance of Azure Web Apps
+- Globally Scale Azure Web Apps: CDN, Traffic Manager, Traffic Manager failover, Choosing the right database, Auto-Scale, Caching, Smart application architecture & design
+- Develop Web Apps in .NET: Azure SDK for .NET
+- Debugging Web Apps: Turn off customerrors in web.config, Publish debug version with symbols, Attach IDE to Azure server, Use server explorer, Enable remote debugging (disabled after 48 hours), Application logs, web server logs, detailed error logs, tracing logs.
+- Language Options: .NET, Java, PHP, Ruby, NodeJS, Python, Powershell and other scripts.
+- Difference Between Web Apps and VM and Cloud Services: Web Apps (PaaS, Package code and config, Autoscale, Multiple instances), Cloud Services (PaaS, VM based, Resizing causes downtime, remote desktop access, install software, Azure takes care of OS) and Virtual Machines (IaaS, do it yourself). 
