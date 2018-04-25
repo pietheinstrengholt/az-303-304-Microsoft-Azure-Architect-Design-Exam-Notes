@@ -75,3 +75,39 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 
 ### Azure Notification Hub
 - Service that takes care of all the platforms (iOS, Android, Windows Mobile, Kindle). Uses single API. Also supports .NET, PHP, Java, NodeJS. Can target single user, group or all users. Allows tagging for sementation. Can security notification, so the app pulls the data secure after receiving the notification.
+
+### Web API
+- Web API: Web API is a way to communicate between to systems using API's. Web API runs on the MVC model. Verifies the request and populates a result based on the model. Can be deployed to a VM running IIS (IaaS) or to the PaaS Web Application. Integrated with Visual Studio.
+- Scaling Web API: For the vm you can either, upgrade to a higher hosting place, change the tier, instance size and instance count (horizontal scaling). Can be used with traffic manager to grow across regions and geos.
+- Web Jobs: continuously running jobs or predefined scheduled jobs. Works with Azure Service Bus or Azure Storage. Windows EXE, CMD, BAT, PS1, Shell, PHP, Python, NodeJS. Can scale by having more instances. Uses the WebJobs SDK.
+- Securing Web API's: For corporate networks use Azure AD Service, AD Federation or Access Control Service. Monitoring or tokens. Audit, logging, validation of inputs, SSL or Cryptocurrency. 
+
+### Hybrid Applications
+- Service Bus Relay: Alles apps to connect to your on premises services. The Service Bus Relay runs in the cloud accepts the request and securely passes on that request to the WCF service running indside the corp network.
+
+### Azure Media Services
+- Azure Media Services: Supports online streaming of video's for live and recorded. PaaS model, so no access to underlying hardware. Supports live encoding. Uses streaming endpoints. Supports previews, Media indexer for closed captions and transcripts. Checks quality of the stream. Archive and DRM (AES Clear Key dynamic encryption).
+
+### Compute Intensive Applications
+- For jobs that can not be handled sequential
+- Managed, Scalable, Elastic and Pay for use model.
+- HPC pack: on premises, hybrid or IaaS (spin up VM's) or PaaS (Azure Batch)
+- Head node (controls the distribution of the jobs, can be on prem or cloud) and Compute nodes (execution of tasks)
+- Azure Batch: Job scheduling as a service, application lifecycle management, budget, quotas, users and limites.
+
+### Designing Long Running Applications
+- Jobs that take days, weeks, with the risk of interupption.
+- Availability: Multiple instances, stateless vs state-ful, avoid single point of failures, deploy across regions
+- Reliability: Faultu domains, error handling and retry, loose coupling, monitoring
+- Scaling: planned versus reactive. Scaling up versus out, breaking up into smaller parts
+- Other considerations: partition the workload, Logging, Retry on errors, Gracefully restart, check points, single instances (is_singleton:true)
+
+### Selecting Storage Options
+- Traditional SQL have challenges around scaling, consider partioning and sharding.
+- NoSQL options for very large applications.
+- Read versus write, temporary storage versus persistent storage, consistency and locking, data sorting versus indexing, latency
+
+### Integrating Azure Services with a Solution
+- Azure Machine Learning: Cloud service that allow to create jobs to predictive do analytics. Examines large amounts of data to detect patterns, generate code to recognize those patterns.
+- Big Data: HDInsight, uses Apache Hadoop (HortonWorks). Manage, Analyze and Report.
+- Azure Search: PaaS service, integrated with REST API's and .NET SDK. Supports mulitple languages, simple query syntax, suggestions, highlight matches, facets and filters.
