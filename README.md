@@ -80,7 +80,7 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Web API: Web API is a way to communicate between to systems using API's. Web API runs on the MVC model. Verifies the request and populates a result based on the model. Can be deployed to a VM running IIS (IaaS) or to the PaaS Web Application. Integrated with Visual Studio.
 - Scaling Web API: For the vm you can either, upgrade to a higher hosting place, change the tier, instance size and instance count (horizontal scaling). Can be used with traffic manager to grow across regions and geos.
 - Web Jobs: continuously running jobs or predefined scheduled jobs. Works with Azure Service Bus or Azure Storage. Windows EXE, CMD, BAT, PS1, Shell, PHP, Python, NodeJS. Can scale by having more instances. Uses the WebJobs SDK.
-- Securing Web API's: For corporate networks use Azure AD Service, AD Federation or Access Control Service. Monitoring or tokens. Audit, logging, validation of inputs, SSL or Cryptocurrency. 
+- Securing Web API's: For corporate networks use Azure AD Service, AD Federation or Access Control Service. Monitoring or tokens. Audit, logging, validation of inputs, SSL or cryptographic. 
 
 ### Hybrid Applications
 - Service Bus Relay: Alles apps to connect to your on premises services. The Service Bus Relay runs in the cloud accepts the request and securely passes on that request to the WCF service running indside the corp network.
