@@ -120,7 +120,10 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Difference Between Web Apps and VM and Cloud Services: Web Apps (PaaS, Package code and config, Autoscale, Multiple instances), Cloud Services (PaaS, VM based, Resizing causes downtime, remote desktop access, install software, Azure takes care of OS) and Virtual Machines (IaaS, do it yourself).
 
 ### Deploy Web Apps
-- TBD
+- Azure Site Extensions: Allow you to add custom blocks to the Azure management portal, e.g. sales figures, phpMyadmin, account usage, etc. Can use pre-defined packages or create custom packages.
+- Packages: An way of deploying code from the development environment to Azure *publishing*. Takes only the relevant code and pushes it to Azure. Azure supports multiple options; FTP/SFTP, Project Kudo (Source Control Management, open source project similar to Git), Web Deploy (built into Visual Studio .NET, precompiles locally and then pushes).
+- App Hosting Plans: Web Apps are hosted on App Service Plans. App Service Plans have limits and prices (# of apps, disk space, SLA's, Auto scaling). Allws to group app together under one service plan. Only apps in the same region can share a plan. Create seperate plans for dev, test and production. Apps and plans belong to a resource group. Resource groups are restricted to a region.
+- Deployment Slots: staging environment to be used before applications are deployed to production. Allows testing before application is published. There is a flip switch to do final deployment. DNS level change. Allows easy roll-back. A/B testing. You can decide to route a percentage of live traffic to the second slot. Allows to see errors only on small percentage of the visitors. 
 
 ### Design for Business Continuity
 - TBD
