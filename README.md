@@ -126,7 +126,10 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Deployment Slots: staging environment to be used before applications are deployed to production. Allows testing before application is published. There is a flip switch to do final deployment. DNS level change. Allows easy roll-back. A/B testing. You can decide to route a percentage of live traffic to the second slot. Allows to see errors only on small percentage of the visitors. 
 
 ### Design for Business Continuity
-- TBD
+- Scaling for Business Continuity: allows to recover quickly from disasters. Scaling up: larger hardware, more memory, bigger CPU. Scaling out: multuple instances. Auto-scaling is only supported on Standard and Premium. Choose a metric and the app will scale based on the metric. SQL Database also has a scaling feature, which is called Elastic Scale. Allows database sharding. CDN scaling and scaling across different regions. Traffic Manager to direct to the quickest responding site.
+- Data Replication: SQL databases distributed to other regions. SQL Sync is not pure replication, but sync. SQL Geo Replication. Data Replication. Premium tier = active geo-replication. Up to 4 copies in the same region or across other regions. Primary is always ahead. Secondary is sometimes behind.
+- Disaster Recovery: Use deployment slots for minimal downtime. Use multiple instances for minimal downtime. Thinks about back strategy. Backups are stored as blobs, Azure Storage Account is needed to store backups on. High Availability consists of Availability, Scalability, Fault Tolerance. Recovery Time Objective (RTO) = maximym amount of time to restore application functionality. Recovery Point Objective (RPO) acceptable time window of data loss.
+- Azure Resource Manager (ARM) Templates: Use Azure Resource Manager (ARM) Templates to create automated deployment of resources for highly available web apps. You leverage from having the same configuration across different locations or regions.
 
 ### Microsoft System Center for Hybrid Model
 - TBD
