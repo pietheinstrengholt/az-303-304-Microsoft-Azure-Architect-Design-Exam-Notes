@@ -117,7 +117,17 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Develop Web Apps in .NET: Azure SDK for .NET
 - Debugging Web Apps: Turn off customerrors in web.config, Publish debug version with symbols, Attach IDE to Azure server, Use server explorer, Enable remote debugging (disabled after 48 hours), Application logs, web server logs, detailed error logs, tracing logs.
 - Language Options: .NET, Java, PHP, Ruby, NodeJS, Python, Powershell and other scripts.
-- Difference Between Web Apps and VM and Cloud Services: Web Apps (PaaS, Package code and config, Autoscale, Multiple instances), Cloud Services (PaaS, VM based, Resizing causes downtime, remote desktop access, install software, Azure takes care of OS) and Virtual Machines (IaaS, do it yourself). 
+- Difference Between Web Apps and VM and Cloud Services: Web Apps (PaaS, Package code and config, Autoscale, Multiple instances), Cloud Services (PaaS, VM based, Resizing causes downtime, remote desktop access, install software, Azure takes care of OS) and Virtual Machines (IaaS, do it yourself).
+
+## Azure Automation
+- Azure SDK for PowerShell, connect you azure account to PowerShell, PowerShell has more options than the portal, works with storage, vm's, etc.
+- Workflows: runbooks, publish, running, scheduling, controlling VMs outside the VM
+
+## Chef and Puppet
+- Chef: open source, cloud and infra automation, available for Azure, AWS, Google Cloud, Powerful but complex, recipes called cookbooks
+- Puppet: open source, cloud and infra automation, available for Azure, AWS, Google Cloud, VMWare, Powerful but complex, manifests and modules
+- Desired State Configuration (DSC): forcing a desired state, ensures that the state remains in predefined consistent setting, e.g. check the security settings, e.g. check modules installed, e.g. avoid software to be installed.
+- PowerShell can be used to enfore DSC. Azure Automation can turn those scripts into scheduled tasks that run in the cloud.
 
 ### New services
 - Azure functions: small functions. (Bash, Batch, C#, F#, javascript, PHP, Powershell, Python). Consumption plan (per requests) or App Service Plan (uses VM's).
@@ -139,3 +149,9 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Azure Log Analytics: Infrastructure monitoring tool for logging at infra level. Can analysis on-prem and cloud log files and stores the result central. Can connect to System Center Operations Manager (SCOM) or to a VM directly. Comparable to Splunk. 
 - Azure Advisor: Azure Advisor is a tool that makes recommendations based on the usage and resources. High availability, security, performance and costs.
 - Azure Data Catalog: Enterprise metadata catalog of all data sources. contains definitions, locations, tags and other information. Can be used to restrict access.
+
+## Big Data
+- HDInsight for ETL: Orchestration (Apache Oozie for scheduling, Azure Data Factory), Data Sources (Azure Blob Storage, Azure Data Lake Store, SQL Data Warehouse, Apache HBase, SQL Sources), Extraction (Apache Scoop for file transfer, Apache Flume for large amount of log data), Transform (SQL Server Integration Services, Split a single line of data into tables, validate against business rules), Hive for relational storage, Pig for processing, Pig works with SSIS.
+- SQL Data Warehouse: Massively Parallel Processing (MPP), Data is broken into shards, Control node (the brain of the Database), Compute (computational power from 1 to 60 nodes), Data Movement Services - DMS coordinates data movements between all the nodes.
+- Azure HDInsight Cluster Types: HDInsight = Apache Hortonworks Data Platform (HDP or Hadoop). 99.9% availabbility. Hadoop, Spark, Hive, LLAP, Hbase, Storm, etc. Works with HDFS (hadoop filesystem), Yarn (job scheduling) and MapReduce (parallel processing). Spark is an open source distributed compute engine. Hive is data warehouse for querying structured data. Works with HiveQL. Translates SQL to MapReduce. Hive LLAP is called interactive Query on Azure. HBase = column oriented key value store. Kafka to process streaming data, Storm for real-time analysis on streaming data.
+- Azure Data Factory: Fully managed ETL service in the Cloud. Run SSIS packages in the Cloud. Piplelines (locical group of activities), activity (processing step), dataset (source of the data), linked services (input and output services). Azure Data Factory v2 is in preview.
