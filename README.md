@@ -119,6 +119,24 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Language Options: .NET, Java, PHP, Ruby, NodeJS, Python, Powershell and other scripts.
 - Difference Between Web Apps and VM and Cloud Services: Web Apps (PaaS, Package code and config, Autoscale, Multiple instances), Cloud Services (PaaS, VM based, Resizing causes downtime, remote desktop access, install software, Azure takes care of OS) and Virtual Machines (IaaS, do it yourself).
 
+### Deploy Web Apps
+- TBD
+
+### Design for Business Continuity
+- TBD
+
+### Microsoft System Center for Hybrid Model
+- TBD
+
+### Monitoring
+- TBD
+
+### Business Continuity and Disaster Recovery
+- TBD
+
+### Azure Backup
+- TBD
+
 ### Azure Automation
 - Azure SDK for PowerShell, connect you azure account to PowerShell, PowerShell has more options than the portal, works with storage, vm's, etc.
 - Workflows: runbooks, publish, running, scheduling, controlling VMs outside the VM
