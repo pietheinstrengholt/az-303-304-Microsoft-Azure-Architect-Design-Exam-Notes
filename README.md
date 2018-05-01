@@ -132,7 +132,9 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Azure Resource Manager (ARM) Templates: Use Azure Resource Manager (ARM) Templates to create automated deployment of resources for highly available web apps. You leverage from having the same configuration across different locations or regions.
 
 ### Microsoft System Center for Hybrid Model
-- TBD
+- Microsoft System Center: Software to manage infra and operations. App Controller = spins up virtual machines on-prem Hyper-V or virtual machines on Azure, Data Protection Manager (DPM) = complete backup solution for servers, Server Manager (IT Service Manager) = library for ITIL, Configuration Manager (SCCM) = everything included to manage the infra, EndPoint Protection = firewall, Orchestrator (SCO) = manager for the runbooks and orchestration. VM Manager (VMM) = manage the virtual machines, scaling scripting, etc., Unified Installer = installer. Hybrid model = mixture of cloud and on-prem. Azure model = only Azure.
+- Considerations for Choosing the Hybrid Model: Authentication, Response time, Single points of failure, Data travelling over distances.
+- When to Use a Hybrid Model: Maintain control over the data, Web apps and mobile apps can access existing on-premises data and services securely. Flexbility between cloud providers. On demand scalability.
 
 ### Monitoring
 - TBD
