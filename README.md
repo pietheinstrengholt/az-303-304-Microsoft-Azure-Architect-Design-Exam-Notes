@@ -137,7 +137,10 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - When to Use a Hybrid Model: Maintain control over the data, Web apps and mobile apps can access existing on-premises data and services securely. Flexbility between cloud providers. On demand scalability.
 
 ### Monitoring
-- TBD
+- Azure Monitoring: minimal monitoring is enabled by default. Turn on verbose monitoring for more details. Verbose monitoring requires a storage account. Up to 10 days. Management portal has monitoring. Azure Monitor and Diagnostic Service. Azure Management API's can be used to retrieve monitoring details. System Center Operations Manager (SCOM) is typically what is really used for detail insights.
+- System Center Operations Manager (SCOM): SCOM is the heart of operations. Azure Management Pack fo Operations is needed to get details from Azure. Allows also monitoring of SQL Server, Web Apps. Requires to install an agent to be installed on server to do monitoring. Requires PKI certificates between machines for trust and security.
+- Monitoring Use Cases: Global Service Monitor = Measure the experience of the end users (what is the delay of the website?), Applications Insights = allows to monitor application at the code level, e.g. application or SQL exceptions. Can be added during development (SDK). System Center = Integrated monitoring with your onpremises and Azure applications. Overall health of the system(s).
+- Patching Strategy: Fault Domain = everything that can be seen as a single point of failure. Availability set allows to run outside a single fault domain. Should have at least 2 instances of each role. Update Domain = For PaaS apps, Microsoft will try to update the apps for only a single Update Domain at a time. Maintenance is planned. Keep you applications across multiple update domains to avoid downtime. Maximum of 20 update domains per role service. Default = 5 update domains. Deployment Slots = staging copy, which allows to fast deployment. Easy roll-back. 
 
 ### Business Continuity and Disaster Recovery
 - TBD
