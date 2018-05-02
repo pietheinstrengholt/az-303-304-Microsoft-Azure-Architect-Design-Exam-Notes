@@ -144,7 +144,7 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 
 ### Business Continuity and Disaster Recovery
 - Business Continuity / Disaster Recovery (BC/DR): design applications for maximum availability. Read Acces Geo Redudant guarantees 99.99%. Thinks of tradeoffs, how much data loss is acceptable and how much downtime is acceptable. The 99.95% SLA is available for all tiers (Standard, Premium and Basic) except Free and Shared.
-- Hyper-V and Hyper-V Replica: Hyper-V Replica allows to have a replicated version of the virtual machine. Azure Site Recovery: allows the primary site to be the secondary if fail-over is required. Operates in a hybrid model. Between VMM and Azure. Between Hyper-V and Azure. Between on-premises sites.
+- Hyper-V and Hyper-V Replica: Hyper-V Replica allows to have a replicated version of the virtual machine. Azure Site Recovery: allows the primary site to be the secondary if fail-over is required. Operates in a hybrid model. Between VMM and Azure. Between Hyper-V and Azure. Between on-premises sites. Azure Site Recovery allows you to automate the replication of virtual machines data whether they are in Azure, or on prem.
 - Azure Backup for VMs: Use Azure backup to backup Azure Resource Manager VM's.
 
 ### Azure Backup
