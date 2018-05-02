@@ -48,7 +48,7 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 
 ### Network Security Group
 - Network Security Group is a virtual firewall. Uses inbound and outbound rules. NSG can be associated to multiple NIC's or subnets. Each NIC or subnet only uses one NSG. Default; only allows outbound. No inbound.
-- Data security in transit and at rest: SSL/TLS (Https). For at rest the Azure Storage Service Encryption (SSE) is used. 256-bit AES. ARM only. For Block blobs, page blobs and append blobs. Client side encryption is possible as well. Azure Disk Encryption = Encrypt the disks used by Virtual Machines.
+- Data security in transit and at rest: SSL/TLS (Https). For data at rest the Azure Storage Service Encryption (SSE) must be used. SSE works by encrypting the data when it is written to Azure Storage, and can be used for Azure Blob Storage and File Storage (currently in Preview). 256-bit AES. ARM only. For Block blobs, page blobs and append blobs. Client side encryption is possible as well. Azure Disk Encryption = Encrypt the disks used by Virtual Machines.
 - Azure Operations Management Suite: A Suite to monitor traffic, see unusual things, etc.
 
 ### Role-Based Security
