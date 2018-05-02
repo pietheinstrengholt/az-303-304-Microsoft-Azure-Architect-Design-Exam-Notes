@@ -143,10 +143,12 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Patching Strategy: Fault Domain = everything that can be seen as a single point of failure. Availability set allows to run outside a single fault domain. Should have at least 2 instances of each role. Update Domain = For PaaS apps, Microsoft will try to update the apps for only a single Update Domain at a time. Maintenance is planned. Keep you applications across multiple update domains to avoid downtime. Maximum of 20 update domains per role service. Default = 5 update domains. Deployment Slots = staging copy, which allows to fast deployment. Easy roll-back. 
 
 ### Business Continuity and Disaster Recovery
-- TBD
+- Business Continuity / Disaster Recovery (BC/DR): design applications for maximum availability. Read Acces Geo Redudant guarantees 99.99%. Thinks of tradeoffs, how much data loss is acceptable and how much downtime is acceptable.
+- Hyper-V and Hyper-V Replica: Hyper-V Replica allows to have a replicated version of the virtual machine. Azure Site Recovery: allows the primary site to be the secondary if fail-over is required. Operates in a hybrid model. Between VMM and Azure. Between Hyper-V and Azure. Between on-premises sites.
+- Azure Backup for VMs: Use Azure backup to backup Azure Resource Manager VM's.
 
 ### Azure Backup
-- TBD
+- Overview of Azure Backup: Azure Backup encrypts the backups in the cloud. No cost for data transmission into Azure. Full or incremental backups. File-level restore (instead of full restore). Azure Backup Vault: Recovery Services creates a Backup Vault for backups. Recommended to use different region. Requires vault credentials certificates and a passphrase. Limit of 1.7TB per volume can be backed up. Data Protection Manager: is part of system center. More powerfull backup solution. Supports bare meta recovery. Requires agent to be installed. Can be deployed on prem or in Azure. Overall limit of 500TB in an Azure Storage account. 
 
 ### Azure Automation
 - Azure SDK for PowerShell, connect you azure account to PowerShell, PowerShell has more options than the portal, works with storage, vm's, etc.
