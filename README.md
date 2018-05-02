@@ -12,7 +12,7 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 
 ### Azure Compute
 - Azure Compute: Azure App Service (web apps, mobile apps, logic apps, api apps)
-- Web Apps: Shared or dedicated virtual machines, managed, any language, ASP.net, NodeJS, PHP or Python. Powershell as scripting. CI/CD capabilities and security options.
+- Web Apps: Shared or dedicated virtual machines, managed, any language, ASP.net, NodeJS, PHP or Python. Powershell as scripting. CI/CD capabilities and security options. The standard pricing tier allows unlimited number of apps. Limited only by CPU, Storage and RAM. In fact, all tiers at Basic or above are unlimited.
 - Mobile Apps: Supports any language with the Azure SDK. Supports single sign on via Azure AD FS. Build offline ready apps. Supports push notifications. Supports staging environments.
 - API Apps: Easy migrate existing API's, CORS, Access control and supports integration with Logic Apps. Logic Apps: Build workflows. Trigger based (If this then that), causes actions to happen. Works with templates. Can be created in the browser.
 - Virtual Machines: Virtual Machines which come in many different flavors and types. Microsoft limits you to 10,000 VMs in a single subscription.
