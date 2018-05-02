@@ -35,7 +35,7 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - Azure Service Bus: message queue which can be used to decouple applications.
 
 ### Managed Identities
-- Azure AD: Multi-tentant, which means it facilitates groups of users with common access rights. Typically used together with SaaS. Enables and allows Single Sign On (SSO) to any cloud or on prem app. Has a Free, Basic and Premium plan.
+- Azure Active Directory (AD): Multi-tentant, which means it facilitates groups of users with common access rights. Typically used together with SaaS. Enables and allows Single Sign On (SSO) to any cloud or on prem app. Has a Free, Basic and Premium plan. Active Directory Connect is what Microsoft recommends to synchronize an on prem AD instance and an Azure Active Directory instance.
 - IDMaaS: Identity Management as a Service.
 - Graph API: Rest API to authenticate. Works with a token and time intervals.
 - OAuth & OpenID: uses the open standards for authentication. User does not have to provide username and password to Azure. 3rd party takes care of this.
