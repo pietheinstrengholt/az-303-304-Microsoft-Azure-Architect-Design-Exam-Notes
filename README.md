@@ -23,10 +23,10 @@ Resource groups: Allows to operate on a group of resources. Allows access contro
 - ExpressRoute: Enterprise dedicated connection. Not via the internet. Up to 10GB speed. Offers dedicated servers for for storage, backup, and recovery, as if it runs in your own data center.
 
 ### Azure Services & Solutions:
-- Azure Load Balancer: Load Balancer to balance the web traffic. Checks with 15 seconds interval is servers are still alive.
+- Azure Load Balancer: Load Balancer to balance the web traffic. Checks with 15 seconds interval is servers are still alive. Azure Load Balancer works at layer-4, or transport level.
 - Internal Load Balancer: Load Balancer to balance internal traffic. Allows different ports and security configuration options.
-- Azure Application Gateway: Gateway that has a WAF (Web Application Firewall) to inspect traffic. Is able to perform robin traffic. Allows Secure Sockets Layer-offload (SSL). Can route traffic based on content inspection.
-- Traffic Manager: Manages and balances the load between different regions.
+- Azure Application Gateway: Gateway that has a WAF (Web Application Firewall) to inspect traffic. Is able to perform robin traffic. Allows Secure Sockets Layer-offload (SSL). Can route traffic based on content inspection. Azure Application Gateway is a layer-7 (application layer) load balancer.
+- Traffic Manager: Manages and balances the load between different regions. Works at DNS level.
 - Azure Media Services: Does encoding and decoding of media. Useful for websites that work with video and video-streaming content.
 - Azure Content Delivery Network (CDN): Serves out static content from much faster locations.
 - Azure Active Directory: Identity management
