@@ -458,7 +458,10 @@
   - Keep you applications across multiple update domains to avoid downtime.
   - Maximum of 20 update domains per role service.
   - Default = 5 update domains.
-  - Deployment Slots = staging copy, which allows to fast deployment. Easy roll-back. 
+  - Deployment Slots = staging copy, which allows to fast deployment. Easy roll-back.
+- Security Center:
+  - Single dashboard for overall security health of Azure resources.
+  - Free and standard
 
 ### Business Continuity and Disaster Recovery
 - Business Continuity / Disaster Recovery (BC/DR):
