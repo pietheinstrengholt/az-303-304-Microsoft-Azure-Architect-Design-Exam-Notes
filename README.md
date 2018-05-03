@@ -133,7 +133,12 @@
   - Typically used together with SaaS.
   - Enables and allows Single Sign On (SSO) to any cloud or on prem app.
   - Has a Free, Basic and Premium plan.
-  - Active Directory Connect is what Microsoft recommends to synchronize an on prem AD instance and an Azure Active Directory instance.   - Users and Groups, as well as SAML are supported.
+  - Active Directory Connect is what Microsoft recommends to synchronize an on prem AD instance and an Azure Active Directory instance. Alternative is to use federation and password synchronisation.
+  - Users and Groups are supported.
+  - By default no Kerberos is enabled.
+  - Authentication via protocols such as SAML, WS-Federation and OAuth.
+  - Uses the Graph REST API
+  - Management is done via Powershell or the Portal
 - IDMaaS:
   - Identity Management as a Service.
 - Graph API:
