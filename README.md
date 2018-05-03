@@ -69,7 +69,6 @@
     - At least two instances are deployed.
     - Do NOT mix workloads in an Availability Set.
 
-
 ### VPN & Express Route
 - P2S Point-to-Site VPN: 
   - VPN connection for single connection or single computer.
@@ -141,6 +140,8 @@
   - Uses the Graph REST API
   - Management is done via Powershell or the Portal
   - Azure AD MFI: Multi factor authentification, e.g. use an additional mobile phone for authentification.
+  - Azure AD P2: Privileged Identity Management.
+    - Combination of groups, roles, MFI and temporary assigned access.
 - IDMaaS:
   - Identity Management as a Service.
 - Graph API:
