@@ -466,31 +466,121 @@
 - Workflows: runbooks, publish, running, scheduling, controlling VMs outside the VM
 
 ### Chef and Puppet
-- Chef: open source, cloud and infra automation, available for Azure, AWS, Google Cloud, Powerful but complex, recipes called cookbooks
-- Puppet: open source, cloud and infra automation, available for Azure, AWS, Google Cloud, VMWare, Powerful but complex, manifests and modules
-- Desired State Configuration (DSC): forcing a desired state, ensures that the state remains in predefined consistent setting, e.g. check the security settings, e.g. check modules installed, e.g. avoid software to be installed.
-- PowerShell can be used to enfore DSC. Azure Automation can turn those scripts into scheduled tasks that run in the cloud.
+- Chef:
+  - open source
+  - cloud and infra automation
+  - available for Azure, AWS, Google Cloud
+  - Powerful but complex, recipes called cookbooks
+- Puppet:
+  - open source
+  - cloud and infra automation
+  - available for Azure, AWS, Google Cloud, VMWare
+  - Powerful but complex, manifests and modules
+- Desired State Configuration (DSC):
+  - forcing a desired state
+  - ensures that the state remains in predefined consistent setting, e.g. check the security settings, e.g. check modules installed, e.g. avoid software to be installed.
+- PowerShell can be used to enfore DSC.
+  - Azure Automation can turn those scripts into scheduled tasks that run in the cloud.
 
 ### New services
-- Azure functions: small functions. (Bash, Batch, C#, F#, javascript, PHP, Powershell, Python). Consumption plan (per requests) or App Service Plan (uses VM's).
-- Stream Analytics: For streaming data. Uses inputs (topics), queries (pattern matching) and outputs (subscribers)
-- IoT Hub / Azure Events Hub: allows 2 way communication between many devices and the back-end. IoT Hub supports more protocols and supports 2 way communication. State management. Events Hub = one way and not state management.
-- Service Fabric Cluster: Microservices platform. Microsofts' internal microservices platform. Supports state management, monitoring, fail-over, load balancing, etc. https://stackoverflow.com/questions/48415057/difference-between-kubernetes-and-service-fabric
-- Azure Cloud Shell: Alternative to Powershell. Supports Bash environment and Powershell (windows) environment. Webbased interface.
-- Azure Container Services (AKS): Kubernetes microservices platform. Managed by Azure. Developed by Google. Uses containers. Each VM has it's own operating system. Runs on a Host OS / Hypervisor. Containers virutalizes the application environment, allowing to move applications easily. Application lives inside the container. Containers are light weight. Quick, auto scaling, enables multi-cloud, provides auto-restart. Uses a manifest file (YAML - .yml). Similar to ARM templates.
-- API Management for API Apps and Serverless Apps: API Gateway service. Has API Gateway features like API limits, caching, reporting, developer focussed portal and documentation, tokens, etc.
-- Azure Key Vault: Manage cryptographic keys, also third party keys. Allows to no longer hard code the key inside the application. Has the option to use a hardware component.
-- Virtual Machine Scale Sets (VMSS): Allows to deploy multiple virtual machines as a set. True autoscaling. Increases or decreases based on the performance (I/O or CPU) or fixed schedules. Limit of 1000 generic. 300 custom. Recommended to use placement groups (above 100 use singlePlacementGroup= false). Don't get public IP's by default. Use a load balancer and jump boxes to connect.
-- Overview of Containers in Azure: AKS, Container instances (isolated containers, windows or linux, public ip, custom size), Container registry (store and manage docker images, works also with other container platforms), Service Fabric, App Service (deploy code directly from desktop to PaaS), Azure Batch (A service that allows large workloads to be deployed to).
-- Network Watcher: Monitoring and diagnosis tool for your network. Topology (vm's, etc.). Package sniffer. Monitor network groups, Troubleshoot VPN problems. Troubleshoot VM connectivity issues. 1 network watcher per region.
-- Data Lake Store: uses the HDFS standard to easy migration of Hadoop and Spark. Blobs have limites (500TB, file 195GB-8TB), Date Lake is optmized for throughput. Blobs can be replicated. Blocs can work with more languages.
-- Storsimple: physical hardware device that is installed inside your on-prem network. Cloud appliance. Used for back-ups, archiving using secure channel. StorSimple Virtual Array is a virtual machine. 
-- SQL Server Stretch DB: allows to scale SQL Server 2016 'cold data' into the Cloud. Uses your existing SQL Server instance. Good alternative to buying more local storage. Works on table level.
-- Azure Database for PostgreSQL and MySQL: Fully managed PostgreSQL or MySQL. Has high availability. Auto backup and restore.
-- Azure Monitor: Allows collection of metrics, activity logs and diagnostic logs. Can generate alerts and notifications based on all the resources. Is a more basic monitoring.
-- Azure Log Analytics: Infrastructure monitoring tool for logging at infra level. Can analysis on-prem and cloud log files and stores the result central. Can connect to System Center Operations Manager (SCOM) or to a VM directly. Comparable to Splunk. 
-- Azure Advisor: Azure Advisor is a tool that makes recommendations based on the usage and resources. High availability, security, performance and costs.
-- Azure Data Catalog: Enterprise metadata catalog of all data sources. contains definitions, locations, tags and other information. Can be used to restrict access.
+- Azure functions:
+  - small functions. (Bash, Batch, C#, F#, javascript, PHP, Powershell, Python).
+  - Consumption plan (per requests) or App Service Plan (uses VM's).
+- Stream Analytics:
+  - For streaming data.
+  - Uses inputs (topics), queries (pattern matching) and outputs (subscribers)
+- IoT Hub / Azure Events Hub:
+  - allows 2 way communication between many devices and the back-end.
+  - IoT Hub supports more protocols and supports 2 way communication.
+  - State management
+  - Events Hub = one way and not state management
+- Service Fabric Cluster:
+  - Microservices platform.
+  - Microsofts' internal microservices platform.
+  - Supports state management, monitoring, fail-over, load balancing, etc.
+  - https://stackoverflow.com/questions/48415057/difference-between-kubernetes-and-service-fabric
+- Azure Cloud Shell:
+  - Alternative to Powershell.
+  - Supports Bash environment and Powershell (windows) environment.
+  - Webbased interface.
+- Azure Container Services (AKS):
+  - Kubernetes microservices platform.
+  - Managed by Azure.
+  - Developed by Google.
+  - Uses containers.
+  - Each VM has it's own operating system.
+  - Runs on a Host OS / Hypervisor.
+  - Containers virutalizes the application environment, allowing to move applications easily.
+  - Application lives inside the container.
+  - Containers are light weight.
+  - Quick, auto scaling, enables multi-cloud, provides auto-restart.
+  - Uses a manifest file (YAML - .yml).
+    - Similar to ARM templates.
+- API Management for API Apps and Serverless Apps:
+  - API Gateway service.
+  - Has API Gateway features like API limits, caching, reporting, developer focussed portal and documentation, tokens, etc.
+- Azure Key Vault:
+  - Manage cryptographic keys, also third party keys.
+  - Allows to no longer hard code the key inside the application.
+  - Has the option to use a hardware component.
+- Virtual Machine Scale Sets (VMSS):
+  - Allows to deploy multiple virtual machines as a set.
+  - True autoscaling.
+  - Increases or decreases based on the performance (I/O or CPU) or fixed schedules.
+  - Limit of 1000 generic.
+  - 300 custom.
+  - Recommended to use placement groups (above 100 use singlePlacementGroup= false).
+  - Don't get public IP's by default.
+  - Use a load balancer and jump boxes to connect.
+- Overview of Containers in Azure:
+  - AKS
+  - Container instances (isolated containers, windows or linux, public ip, custom size)
+  - Container registry (store and manage docker images, works also with other container platforms)
+  - Service Fabric
+  - App Service (deploy code directly from desktop to PaaS)
+  - Azure Batch (A service that allows large workloads to be deployed to).
+- Network Watcher:
+  - Monitoring and diagnosis tool for your network.
+  - Topology (vm's, etc.).
+  - Package sniffer.
+  - Monitor network groups, Troubleshoot VPN problems.
+  - Troubleshoot VM connectivity issues.
+  - 1 network watcher per region.
+- Data Lake Store:
+  - Uses the HDFS standard to easy migration of Hadoop and Spark.
+  - Blobs have limites (500TB, file 195GB-8TB)
+  - Date Lake is optmized for throughput.
+  - Blobs can be replicated.
+  - Blobs can work with more languages.
+- Storsimple:
+  - Physical hardware device that is installed inside your on-prem network.
+  - Cloud appliance.
+  - Used for back-ups, archiving using secure channel.
+  - StorSimple Virtual Array is a virtual machine. 
+  - SQL Server Stretch DB:
+    - Allows to scale SQL Server 2016 'cold data' into the Cloud.
+    - Uses your existing SQL Server instance.
+    - Good alternative to buying more local storage. Works on table level.
+- Azure Database for PostgreSQL and MySQL:
+  - Fully managed PostgreSQL or MySQL.
+  - Has high availability.
+  - Auto backup and restore.
+- Azure Monitor:
+  - Allows collection of metrics, activity logs and diagnostic logs.
+  - Can generate alerts and notifications based on all the resources.
+  - Is a more basic monitoring.
+- Azure Log Analytics:
+  - Infrastructure monitoring tool for logging at infra level.
+  - Can analysis on-prem and cloud log files and stores the result central.
+  - Can connect to System Center Operations Manager (SCOM) or to a VM directly.
+  - Comparable to Splunk. 
+- Azure Advisor:
+  - Azure Advisor is a tool that makes recommendations based on the usage and resources.
+  - High availability, security, performance and costs.
+- Azure Data Catalog:
+  - Enterprise metadata catalog of all data sources.
+  - contains definitions, locations, tags and other information.
+  - Can be used to restrict access.
 
 ### Big Data
 - HDInsight for ETL:
