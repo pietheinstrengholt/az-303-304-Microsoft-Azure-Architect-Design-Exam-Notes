@@ -142,6 +142,7 @@
   - Azure AD MFI: Multi factor authentification, e.g. use an additional mobile phone for authentification.
   - Azure AD P2: Privileged Identity Management.
     - Combination of groups, roles, MFI and temporary assigned access.
+    - Supports Identity protection. Centralized view of risks, access to all Cloud, etc. 
 - IDMaaS:
   - Identity Management as a Service.
 - Graph API:
