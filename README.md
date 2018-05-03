@@ -61,6 +61,11 @@
     - N = GPU capabilities for graphical intensive workloadsac
   - Stopped: The virtual machine is no longer running, but you are still paying for it.
   - Deallocated: You are no longer charged for the VM. Can use the API or Portal to deallocate the VM.
+  - Availability Sets:
+    - Availability sets ensure that the VMs you deploy on Azure are distributed across multiple isolated hardware nodes in a cluster.
+    - At least two instances are deployed.
+    - Do NOT mix workloads in an Availability Set.
+
 
 ### VPN & Express Route
 - P2S Point-to-Site VPN: 
