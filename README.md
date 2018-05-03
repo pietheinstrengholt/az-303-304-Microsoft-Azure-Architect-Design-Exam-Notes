@@ -219,9 +219,17 @@
   - Containers have security.
   - Blob = binary large object.
   - 500TB capacity.
-  - Block blobs: Optimized for streaming and storing objects in the Cloud. Block blobs are idea for large binary (or text) file storage that don't need to be frequently read from or accessed to. Block blobs support up to 50,000 blocks of up to 100MB each, or approximately 4.75 TB.
+  - Block blobs:
+    - Optimized for streaming and storing objects in the Cloud.
+    - Block blobs are idea for large binary (or text) file storage that don't need to be frequently read from or accessed to.
+    - Block blobs support up to 50,000 blocks of up to 100MB each, or approximately 4.75 TB.
+    - Cool and Archive options:
+      - Cool early deletion period of 30 days.
+      - Archive early deletion period of 180 days.
   - Append blobs: Similar to block blobs but optimized for append only (log files).
-  - Page blobs: Good for random writes, represents harddisk, virtual machine storage. Page blobs are better for Virtual machine VHD files.
+  - Page blobs:
+    - Good for random writes, represents harddisk, virtual machine storage.
+    - Page blobs are better for Virtual machine VHD files.
 - Queue Storage:
   - Max 64gb in size.
   - Invisibility behavior, read and then becomes invisible for a period of time.
