@@ -59,6 +59,8 @@
     - H = High performance VM's
     - Ls = Storage optimized with high throughput and I/O
     - N = GPU capabilities for graphical intensive workloadsac
+  - Stopped: The virtual machine is no longer running, but you are still paying for it.
+  - Deallocated: You are no longer charged for the VM. Can use the API or Portal to deallocate the VM.
 
 ### VPN & Express Route
 - P2S Point-to-Site VPN: 
