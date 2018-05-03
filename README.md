@@ -140,6 +140,7 @@
   - Authentication via protocols such as SAML, WS-Federation and OAuth.
   - Uses the Graph REST API
   - Management is done via Powershell or the Portal
+  - Azure AD MFI: Multi factor authentification, e.g. use an additional mobile phone for authentification.
 - IDMaaS:
   - Identity Management as a Service.
 - Graph API:
