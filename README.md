@@ -51,6 +51,14 @@
   - Microsoft limits you to 10,000 VMs in a single subscription.
   - Scale-up: make it bigger
   - Scale-out: add more instances
+  - Types:
+    - A = general purpose VM's with HHD temporary drive
+    - D = SSD temporary drive and faster processor than A
+    - F = Compute uptimized with 2GB of RAM and 16GB of SSD per core
+    - G = Performance compute with massive scale and SSD temporary drives
+    - H = High performance VM's
+    - Ls = Storage optimized with high throughput and I/O
+    - N = GPU capabilities for graphical intensive workloadsac
 
 ### VPN & Express Route
 - P2S Point-to-Site VPN: 
