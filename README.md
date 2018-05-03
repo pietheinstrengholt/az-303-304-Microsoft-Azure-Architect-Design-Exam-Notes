@@ -217,31 +217,57 @@
 - Security: Two levels: Infrastrcture and platform security, Application Security. Infrastrcture and platform security = managed by Microsoft. Application Security = responsibility of developer.
 
 ### Azure Notification Hub
-- Service that takes care of all the platforms (iOS, Android, Windows Mobile, Kindle). Uses single API. Also supports .NET, PHP, Java, NodeJS. Can target single user, group or all users. Allows tagging for sementation. Can security notification, so the app pulls the data secure after receiving the notification.
+- Service that takes care of all the platforms (iOS, Android, Windows Mobile, Kindle).
+- Uses single API.
+- Also supports .NET, PHP, Java, NodeJS.
+- Can target single user, group or all users.
+- Allows tagging for sementation.
+- Can security notification, so the app pulls the data secure after receiving the notification.
 
 ### Web API
-- Web API: Web API is a way to communicate between to systems using API's. Web API runs on the MVC model. Verifies the request and populates a result based on the model. Can be deployed to a VM running IIS (IaaS) or to the PaaS Web Application. Integrated with Visual Studio.
-- Scaling Web API: For the vm you can either, upgrade to a higher hosting place, change the tier, instance size and instance count (horizontal scaling). Can be used with traffic manager to grow across regions and geos.
-- Web Jobs: continuously running jobs or predefined scheduled jobs. Works with Azure Service Bus or Azure Storage. Windows EXE, CMD, BAT, PS1, Shell, PHP, Python, NodeJS. Can scale by having more instances. Uses the WebJobs SDK.
-- Securing Web API's: For corporate networks use Azure AD Service, AD Federation or Access Control Service. Monitoring or tokens. Audit, logging, validation of inputs, SSL or cryptographic. 
+- Web API:
+  - Web API is a way to communicate between to systems using API's.
+  - Web API runs on the MVC model.
+  - Verifies the request and populates a result based on the model.
+  - Can be deployed to a VM running IIS (IaaS) or to the PaaS Web Application.
+  - Integrated with Visual Studio.
+- Scaling Web API:
+  - For the vm you can either, upgrade to a higher hosting place, change the tier, instance size and instance count (horizontal scaling).
+  - Can be used with traffic manager to grow across regions and geos.
+- Web Jobs:
+  - Continuously running jobs or predefined scheduled jobs.
+  - Works with Azure Service Bus or Azure Storage.
+  - Windows EXE, CMD, BAT, PS1, Shell, PHP, Python, NodeJS.
+  - Can scale by having more instances. Uses the WebJobs SDK.
+- Securing Web API's:
+  - For corporate networks use Azure AD Service, AD Federation or Access Control Service.
+  - Monitoring or tokens. Audit, logging, validation of inputs, SSL or cryptographic. 
 
 ### Hybrid Applications
-- Service Bus Relay: Alles apps to connect to your on premises services. The Service Bus Relay runs in the cloud accepts the request and securely passes on that request to the WCF service running indside the corp network.
+- Service Bus Relay:
+  - Allows apps to connect to your on premises services.
+  - The Service Bus Relay runs in the cloud accepts the request and securely passes on that request to the WCF service running indside the corp network.
 
 ### Azure Media Services
-- Azure Media Services: Supports online streaming of video's for live and recorded. PaaS model, so no access to underlying hardware. Supports live encoding. Uses streaming endpoints. Supports previews, Media indexer for closed captions and transcripts. Checks quality of the stream. Archive and DRM (AES Clear Key dynamic encryption).
+- Azure Media Services:
+  - Supports online streaming of video's for live and recorded.
+  - PaaS model, so no access to underlying hardware.
+  - Supports live encoding. Uses streaming endpoints.
+  - Supports previews, Media indexer for closed captions and transcripts.
+  - Checks quality of the stream. Archive and DRM (AES Clear Key dynamic encryption).
 
 ### Compute Intensive Applications
 - For jobs that can not be handled sequential
 - Managed, Scalable, Elastic and Pay for use model.
 - HPC pack: on premises, hybrid or IaaS (spin up VM's) or PaaS (Azure Batch)
 - Head node (controls the distribution of the jobs, can be on prem or cloud) and Compute nodes (execution of tasks)
-- Azure Batch: Job scheduling as a service, application lifecycle management, budget, quotas, users and limites.
+- Azure Batch:
+  - Job scheduling as a service, application lifecycle management, budget, quotas, users and limites.
 
 ### Designing Long Running Applications
 - Jobs that take days, weeks, with the risk of interupption.
 - Availability: Multiple instances, stateless vs state-ful, avoid single point of failures, deploy across regions
-- Reliability: Faultu domains, error handling and retry, loose coupling, monitoring
+- Reliability: Faulty domains, error handling and retry, loose coupling, monitoring
 - Scaling: planned versus reactive. Scaling up versus out, breaking up into smaller parts
 - Other considerations: partition the workload, Logging, Retry on errors, Gracefully restart, check points, single instances (is_singleton:true)
 
@@ -251,22 +277,63 @@
 - Read versus write, temporary storage versus persistent storage, consistency and locking, data sorting versus indexing, latency
 
 ### Integrating Azure Services with a Solution
-- Azure Machine Learning: Cloud service that allow to create jobs to predictive do analytics. Examines large amounts of data to detect patterns, generate code to recognize those patterns.
-- Big Data: HDInsight, uses Apache Hadoop (HortonWorks). Manage, Analyze and Report.
-- Azure Search: PaaS service, integrated with REST API's and .NET SDK. Supports mulitple languages, simple query syntax, suggestions, highlight matches, facets and filters.
+- Azure Machine Learning:
+  - Cloud service that allow to create jobs to predictive do analytics.
+  - Examines large amounts of data to detect patterns, generate code to recognize those patterns.
+- Big Data:
+  - HDInsight, uses Apache Hadoop (HortonWorks).
+  - Manage, Analyze and Report.
+- Azure Search:
+  - PaaS service, integrated with REST API's and .NET SDK.
+  - Supports mulitple languages, simple query syntax, suggestions, highlight matches, facets and filters.
 
 ### Scalability and Performance of Azure Web Apps
-- Globally Scale Azure Web Apps: CDN, Traffic Manager, Traffic Manager failover, Choosing the right database, Auto-Scale, Caching, Smart application architecture & design
+- Globally Scale Azure Web Apps:
+  - CDN
+  - Traffic Manager
+  - Traffic Manager failover
+  - Choosing the right database
+  - Auto-Scale
+  - Caching
+  - Smart application architecture & design
 - Develop Web Apps in .NET: Azure SDK for .NET
-- Debugging Web Apps: Turn off customerrors in web.config, Publish debug version with symbols, Attach IDE to Azure server, Use server explorer, Enable remote debugging (disabled after 48 hours), Application logs, web server logs, detailed error logs, tracing logs.
+- Debugging Web Apps:
+  - Turn off customerrors in web.config
+  - Publish debug version with symbols
+  - Attach IDE to Azure server
+  - Use server explorer
+  - Enable remote debugging (disabled after 48 hours)
+  - Application logs, web server logs, detailed error logs, tracing logs.
 - Language Options: .NET, Java, PHP, Ruby, NodeJS, Python, Powershell and other scripts.
-- Difference Between Web Apps and VM and Cloud Services: Web Apps (PaaS, Package code and config, Autoscale, Multiple instances), Cloud Services (PaaS, VM based, Resizing causes downtime, remote desktop access, install software, Azure takes care of OS) and Virtual Machines (IaaS, do it yourself).
+- Difference Between Web Apps and VM and Cloud Services:
+  - Web Apps (PaaS, Package code and config, Autoscale, Multiple instances)
+  - Cloud Services (PaaS, VM based, Resizing causes downtime, remote desktop access, install software, Azure takes care of OS) and Virtual Machines (IaaS, do it yourself).
 
 ### Deploy Web Apps
-- Azure Site Extensions: Allow you to add custom blocks to the Azure management portal, e.g. sales figures, phpMyadmin, account usage, etc. Can use pre-defined packages or create custom packages.
-- Packages: An way of deploying code from the development environment to Azure *publishing*. Takes only the relevant code and pushes it to Azure. Azure supports multiple options; FTP/SFTP, Project Kudo (Source Control Management, open source project similar to Git), Web Deploy (built into Visual Studio .NET, precompiles locally and then pushes).
-- App Hosting Plans: Web Apps are hosted on App Service Plans. App Service Plans have limits and prices (# of apps, disk space, SLA's, Auto scaling). Allws to group app together under one service plan. Only apps in the same region can share a plan. Create seperate plans for dev, test and production. Apps and plans belong to a resource group. Resource groups are restricted to a region.
-- Deployment Slots: staging environment to be used before applications are deployed to production. Allows testing before application is published. There is a flip switch to do final deployment. DNS level change. Allows easy roll-back. A/B testing. You can decide to route a percentage of live traffic to the second slot. Allows to see errors only on small percentage of the visitors. 
+- Azure Site Extensions:
+  - Allow you to add custom blocks to the Azure management portal, e.g. sales figures, phpMyadmin, account usage, etc.
+  - Can use pre-defined packages or create custom packages.
+- Packages:
+  - An way of deploying code from the development environment to Azure *publishing*.
+  - Takes only the relevant code and pushes it to Azure.
+  - Azure supports multiple options; FTP/SFTP, Project Kudo (Source Control Management, open source project similar to Git), Web Deploy (built into Visual Studio .NET, precompiles locally and then pushes).
+- App Hosting Plans:
+  - Web Apps are hosted on App Service Plans.
+  - App Service Plans have limits and prices (# of apps, disk space, SLA's, Auto scaling).
+  - Allows to group app together under one service plan.
+  - Only apps in the same region can share a plan.
+  - Create seperate plans for dev, test and production.
+  - Apps and plans belong to a resource group.
+  - Resource groups are restricted to a region.
+- Deployment Slots:
+  - Staging environment to be used before applications are deployed to production.
+  - Allows testing before application is published.
+  - There is a flip switch to do final deployment.
+  - DNS level change.
+  - Allows easy roll-back.
+  - A/B testing.
+  - You can decide to route a percentage of live traffic to the second slot.
+  - Allows to see errors only on small percentage of the visitors. 
 
 ### Design for Business Continuity
 - Scaling for Business Continuity: allows to recover quickly from disasters. Scaling up: larger hardware, more memory, bigger CPU. Scaling out: multuple instances. Auto-scaling is only supported on Standard and Premium. Choose a metric and the app will scale based on the metric. SQL Database also has a scaling feature, which is called Elastic Scale. Allows database sharding. CDN scaling and scaling across different regions. Traffic Manager to direct to the quickest responding site. Scaling-up an application involves moving to a higher pricing tier, which can be done in the Azure portal in a few minutes.
@@ -325,7 +392,31 @@
 - Azure Data Catalog: Enterprise metadata catalog of all data sources. contains definitions, locations, tags and other information. Can be used to restrict access.
 
 ### Big Data
-- HDInsight for ETL: Orchestration (Apache Oozie for scheduling, Azure Data Factory), Data Sources (Azure Blob Storage, Azure Data Lake Store, SQL Data Warehouse, Apache HBase, SQL Sources), Extraction (Apache Scoop for file transfer, Apache Flume for large amount of log data), Transform (SQL Server Integration Services, Split a single line of data into tables, validate against business rules), Hive for relational storage, Pig for processing, Pig works with SSIS.
-- SQL Data Warehouse: Massively Parallel Processing (MPP), Data is broken into shards, Control node (the brain of the Database), Compute (computational power from 1 to 60 nodes), Data Movement Services - DMS coordinates data movements between all the nodes.
-- Azure HDInsight Cluster Types: HDInsight = Apache Hortonworks Data Platform (HDP or Hadoop). 99.9% availabbility. Hadoop, Spark, Hive, LLAP, Hbase, Storm, etc. Works with HDFS (hadoop filesystem), Yarn (job scheduling) and MapReduce (parallel processing). Spark is an open source distributed compute engine. Hive is data warehouse for querying structured data. Works with HiveQL. Translates SQL to MapReduce. Hive LLAP is called interactive Query on Azure. HBase = column oriented key value store. Kafka to process streaming data, Storm for real-time analysis on streaming data.
-- Azure Data Factory: Fully managed ETL service in the Cloud. Run SSIS packages in the Cloud. Piplelines (locical group of activities), activity (processing step), dataset (source of the data), linked services (input and output services). Azure Data Factory v2 is in preview.
+- HDInsight for ETL:
+  - Orchestration (Apache Oozie for scheduling, Azure Data Factory)
+  - Data Sources (Azure Blob Storage, Azure Data Lake Store, SQL Data Warehouse, Apache HBase, SQL Sources)
+  - Extraction (Apache Scoop for file transfer, Apache Flume for large amount of log data)
+  - Transform (SQL Server Integration Services, Split a single line of data into tables, validate against business rules), Hive for relational storage, Pig for processing, Pig works with SSIS.
+- SQL Data Warehouse:
+  - Massively Parallel Processing (MPP)
+  - Data is broken into shards
+  - Control node (the brain of the Database)
+  - Compute (computational power from 1 to 60 nodes)
+  - Data Movement Services - DMS coordinates data movements between all the nodes.
+- Azure HDInsight Cluster Types:
+  - HDInsight = Apache Hortonworks Data Platform (HDP or Hadoop)
+  - 99.9% availabbility
+  - Hadoop, Spark, Hive, LLAP, Hbase, Storm, etc.
+  - Works with HDFS (hadoop filesystem)
+  - Yarn (job scheduling)
+  - MapReduce (parallel processing)
+  - Spark is an open source distributed compute engine.
+  - Hive is data warehouse for querying structured data. Works with HiveQL. Translates SQL to MapReduce.
+  - Hive LLAP is called interactive Query on Azure.
+  - HBase = column oriented key value store.
+  - Kafka to process streaming data, Storm for real-time analysis on streaming data.
+- Azure Data Factory:
+  - Fully managed ETL service in the Cloud.
+  - Run SSIS packages in the Cloud.
+  - Piplelines (locical group of activities), activity (processing step), dataset (source of the data), linked services (input and output services).
+  - Azure Data Factory v2 is in preview.
