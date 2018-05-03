@@ -24,6 +24,9 @@
   - No nesting is allowed. You can link however.
   - No limits.
   - Unable to rename after creation.
+- Ingress/Egress:
+  - Ingress: Data inbound to Azure. No charges for ingress.
+  - Egress: Data outbound to Azure. There are charges for egress, unless using a metered ExpressRoute connection.
 
 ### Azure Compute
 - Azure Compute:
@@ -36,7 +39,7 @@
   - Limited only by CPU, Storage and RAM.
   - In fact, all tiers at Basic or above are unlimited.
 - Mobile Apps: 
-  - Supports any language with the Azure SDK. 
+  - Supports any language with the Azure SDK.
   - Supports single sign on via Azure AD FS.
   - Build offline ready apps.
   - Supports push notifications. 
