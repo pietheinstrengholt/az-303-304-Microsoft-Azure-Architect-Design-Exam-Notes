@@ -92,6 +92,7 @@
   - Load Balancer to balance the web traffic.
   - Checks with 15 seconds interval is servers are still alive.
   - Azure Load Balancer works at layer-4, or transport level.
+  - Stickyness, uses 5 tuples (source IP, destination IP, protocol (tcp/udp), source port and destination port) so that user's traffic is always routed to same machine.
 - Internal Load Balancer:
   - Load Balancer to balance internal traffic.
   - Allows different ports and security configuration options.
