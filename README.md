@@ -107,6 +107,11 @@
 - Traffic Manager:
   - Manages and balances the load between different regions.
   - Works at DNS level.
+  - Uses different routing methods:
+    - Performance: based on the DNS location of the user
+    - Priority: primary and failover targets
+    - Weighted: Round-robin with weights
+    - Geographic: Target based on geo-location
 - Azure Media Services:
   - Does encoding and decoding of media.
   - Useful for websites that work with video and video-streaming content.
