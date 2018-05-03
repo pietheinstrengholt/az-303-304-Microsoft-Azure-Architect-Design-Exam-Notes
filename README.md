@@ -336,29 +336,130 @@
   - Allows to see errors only on small percentage of the visitors. 
 
 ### Design for Business Continuity
-- Scaling for Business Continuity: allows to recover quickly from disasters. Scaling up: larger hardware, more memory, bigger CPU. Scaling out: multuple instances. Auto-scaling is only supported on Standard and Premium. Choose a metric and the app will scale based on the metric. SQL Database also has a scaling feature, which is called Elastic Scale. Allows database sharding. CDN scaling and scaling across different regions. Traffic Manager to direct to the quickest responding site. Scaling-up an application involves moving to a higher pricing tier, which can be done in the Azure portal in a few minutes.
-- Data Replication: SQL databases distributed to other regions. SQL Sync is not pure replication, but sync. SQL Geo Replication. Data Replication. Premium tier = active geo-replication. Up to 4 copies in the same region or across other regions. Primary is always ahead. Secondary is sometimes behind.
-- Disaster Recovery: Use deployment slots for minimal downtime. Use multiple instances for minimal downtime. Thinks about back strategy. Backups are stored as blobs, Azure Storage Account is needed to store backups on. High Availability consists of Availability, Scalability, Fault Tolerance. Recovery Time Objective (RTO) = maximym amount of time to restore application functionality. Recovery Point Objective (RPO) acceptable time window of data loss. Locally redundant storage (LRS) and Zone Redundant Storage (ZRS) storage stores 3 copies of your data in a single region, while Azure Geo Redundant Storage (GRS) and Read-access Azure Geo Redundant Storage (RA-GRS) stores 6 copies across two regions.
-- Azure Resource Manager (ARM) Templates: Use Azure Resource Manager (ARM) Templates to create automated deployment of resources for highly available web apps. You leverage from having the same configuration across different locations or regions.
+- Scaling for Business Continuity:
+  - allows to recover quickly from disasters.
+  - Scaling up: larger hardware, more memory, bigger CPU.
+  - Scaling out: multuple instances.
+  - Auto-scaling is only supported on Standard and Premium.
+  - Choose a metric and the app will scale based on the metric.
+  - SQL Database also has a scaling feature, which is called Elastic Scale.
+  - Allows database sharding.
+  - CDN scaling and scaling across different regions.
+  - Traffic Manager to direct to the quickest responding site.
+  - Scaling-up an application involves moving to a higher pricing tier, which can be done in the Azure portal in a few minutes.
+- Data Replication:
+  - SQL databases distributed to other regions.
+  - SQL Sync is not pure replication, but sync.
+  - SQL Geo Replication.
+  - Data Replication.
+  - Premium tier = active geo-replication.
+  - Up to 4 copies in the same region or across other regions.
+  - Primary is always ahead. Secondary is sometimes behind.
+- Disaster Recovery:
+  - Use deployment slots for minimal downtime.
+  - Use multiple instances for minimal downtime.
+  - Thinks about back strategy.
+  - Backups are stored as blobs, Azure Storage Account is needed to store backups on.
+  - High Availability consists of Availability, Scalability, Fault Tolerance.
+  - Recovery Time Objective (RTO) = maximym amount of time to restore application functionality.
+  - Recovery Point Objective (RPO) = acceptable time window of data loss.
+  - Locally redundant storage (LRS) and Zone Redundant Storage (ZRS) storage stores 3 copies of your data in a single region, while Azure Geo Redundant Storage (GRS) and Read-access Azure Geo Redundant Storage (RA-GRS) stores 6 copies across two regions.
+- Azure Resource Manager (ARM) Templates:
+  - Use Azure Resource Manager (ARM) Templates to create automated deployment of resources for highly available web apps.
+  - You leverage from having the same configuration across different locations or regions.
 
 ### Microsoft System Center for Hybrid Model
-- Microsoft System Center: Software to manage infra and operations. App Controller = spins up virtual machines on-prem Hyper-V or virtual machines on Azure, Data Protection Manager (DPM) = complete backup solution for servers, Server Manager (IT Service Manager) = library for ITIL, Configuration Manager (SCCM) = everything included to manage the infra, EndPoint Protection = firewall, Orchestrator (SCO) = manager for the runbooks and orchestration. VM Manager (VMM) = manage the virtual machines, scaling scripting, etc., Unified Installer = installer. Hybrid model = mixture of cloud and on-prem. Azure model = only Azure.
-- Considerations for Choosing the Hybrid Model: Authentication, Response time, Single points of failure, Data travelling over distances.
-- When to Use a Hybrid Model: Maintain control over the data, Web apps and mobile apps can access existing on-premises data and services securely. Flexbility between cloud providers. On demand scalability.
+- Microsoft System Center:
+  - Software to manage infra and operations.
+  - App Controller = spins up virtual machines on-prem Hyper-V or virtual machines on Azure
+  - Data Protection Manager (DPM) = complete backup solution for servers
+  - Server Manager (IT Service Manager) = library for ITIL
+  - Configuration Manager (SCCM) = everything included to manage the infra
+  - EndPoint Protection = firewall
+  - Orchestrator (SCO) = manager for the runbooks and orchestration.
+  - VM Manager (VMM) = manage the virtual machines, scaling scripting, etc.
+  - Unified Installer = installer.
+    - Hybrid model = mixture of cloud and on-prem.
+    - Azure model = only Azure.
+- Considerations for Choosing the Hybrid Model:
+  - Authentication
+  - Response time
+  - Single points of failure
+  - Data travelling over distances.
+- When to Use a Hybrid Model:
+  - Maintain control over the data
+  - Web apps and mobile apps can access existing on-premises data and services securely
+  - Flexbility between cloud providers.
+  - On demand scalability.
 
 ### Monitoring
-- Azure Monitoring: minimal monitoring is enabled by default. Turn on verbose monitoring for more details. Verbose monitoring requires a storage account. Up to 10 days. Management portal has monitoring. Azure Monitor and Diagnostic Service. Azure Management API's can be used to retrieve monitoring details. System Center Operations Manager (SCOM) is typically what is really used for detail insights.
-- System Center Operations Manager (SCOM): SCOM is the heart of operations. Azure Management Pack fo Operations is needed to get details from Azure. Allows also monitoring of SQL Server, Web Apps. Requires to install an agent to be installed on server to do monitoring. Requires PKI certificates between machines for trust and security.
-- Monitoring Use Cases: Global Service Monitor = Measure the experience of the end users (what is the delay of the website?), Applications Insights = allows to monitor application at the code level, e.g. application or SQL exceptions. Can be added during development (SDK). System Center = Integrated monitoring with your onpremises and Azure applications. Overall health of the system(s).
-- Patching Strategy: Fault Domain = everything that can be seen as a single point of failure. Availability set allows to run outside a single fault domain. Should have at least 2 instances of each role. Update Domain = For PaaS apps, Microsoft will try to update the apps for only a single Update Domain at a time. Maintenance is planned. Keep you applications across multiple update domains to avoid downtime. Maximum of 20 update domains per role service. Default = 5 update domains. Deployment Slots = staging copy, which allows to fast deployment. Easy roll-back. 
+- Azure Monitoring:
+  - minimal monitoring is enabled by default.
+  - Turn on verbose monitoring for more details.
+  - Verbose monitoring requires a storage account.
+  - Up to 10 days.
+  - Management portal has monitoring.
+  - Azure Monitor and Diagnostic Service.
+  - Azure Management API's can be used to retrieve monitoring details.
+  - System Center Operations Manager (SCOM) is typically what is really used for detail insights.
+- System Center Operations Manager (SCOM):
+  - SCOM is the heart of operations.
+  - Azure Management Pack fo Operations is needed to get details from Azure.
+  - Allows also monitoring of SQL Server, Web Apps.
+  - Requires to install an agent to be installed on server to do monitoring.
+  - Requires PKI certificates between machines for trust and security.
+- Monitoring Use Cases:
+  - Global Service Monitor = Measure the experience of the end users (what is the delay of the website?)
+  - Applications Insights = allows to monitor application at the code level, e.g. application or SQL exceptions.
+    - Can be added during development (SDK).
+  - System Center = Integrated monitoring with your onpremises and Azure applications.
+    - Overall health of the system(s).
+- Patching Strategy:
+  - Fault Domain = everything that can be seen as a single point of failure.
+  - Availability set allows to run outside a single fault domain.
+  - Should have at least 2 instances of each role.
+  - Update Domain = For PaaS apps, Microsoft will try to update the apps for only a single Update Domain at a time.
+  - Maintenance is planned.
+  - Keep you applications across multiple update domains to avoid downtime.
+  - Maximum of 20 update domains per role service.
+  - Default = 5 update domains.
+  - Deployment Slots = staging copy, which allows to fast deployment. Easy roll-back. 
 
 ### Business Continuity and Disaster Recovery
-- Business Continuity / Disaster Recovery (BC/DR): design applications for maximum availability. Read Acces Geo Redudant guarantees 99.99%. Thinks of tradeoffs, how much data loss is acceptable and how much downtime is acceptable. The 99.95% SLA is available for all tiers (Standard, Premium and Basic) except Free and Shared.
-- Hyper-V and Hyper-V Replica: Hyper-V Replica allows to have a replicated version of the virtual machine. Azure Site Recovery: allows the primary site to be the secondary if fail-over is required. Operates in a hybrid model. Between VMM and Azure. Between Hyper-V and Azure. Between on-premises sites. Azure Site Recovery allows you to automate the replication of virtual machines data whether they are in Azure, or on prem.
-- Azure Backup for VMs: Use Azure backup to backup Azure Resource Manager VM's.
+- Business Continuity / Disaster Recovery (BC/DR):
+  - design applications for maximum availability.
+  - Read Acces Geo Redudant guarantees 99.99%.
+  - Think of tradeoffs, how much data loss is acceptable and how much downtime is acceptable.
+  - The 99.95% SLA is available for all tiers (Standard, Premium and Basic) except Free and Shared.
+- Hyper-V and Hyper-V Replica:
+  - Hyper-V Replica allows to have a replicated version of the virtual machine.
+  - Azure Site Recovery:
+    - Allows the primary site to be the secondary if fail-over is required.
+    - Operates in a hybrid model.
+    - Between VMM and Azure.
+    - Between Hyper-V and Azure.
+    - Between on-premises sites.
+    - Azure Site Recovery allows you to automate the replication of virtual machines data whether they are in Azure, or on prem.
+- Azure Backup for VMs:
+  - Use Azure backup to backup Azure Resource Manager VM's.
 
 ### Azure Backup
-- Overview of Azure Backup: Azure Backup encrypts the backups in the cloud. No cost for data transmission into Azure. Full or incremental backups. File-level restore (instead of full restore). Azure Backup Vault: Recovery Services creates a Backup Vault for backups. Recommended to use different region. Requires vault credentials certificates and a passphrase. Limit of 1.7TB per volume can be backed up. Data Protection Manager: is part of system center. More powerfull backup solution. Supports bare meta recovery. Requires agent to be installed. Can be deployed on prem or in Azure. Overall limit of 500TB in an Azure Storage account. 
+- Overview of Azure Backup:
+  - Azure Backup encrypts the backups in the cloud.
+  - No cost for data transmission into Azure.
+  - Full or incremental backups.
+  - File-level restore (instead of full restore).
+  - Azure Backup Vault: Recovery Services creates a Backup Vault for backups.
+  - Recommended to use different region.
+  - Requires vault credentials certificates and a passphrase.
+  - Limit of 1.7TB per volume can be backed up.
+  - Data Protection Manager:
+    - Is part of system center.
+    - More powerfull backup solution.
+    - Supports bare meta recovery.
+    - Requires agent to be installed.
+    - Can be deployed on prem or in Azure.
+    - Overall limit of 500TB in an Azure Storage account. 
 
 ### Azure Automation
 - Azure SDK for PowerShell, connect you azure account to PowerShell, PowerShell has more options than the portal, works with storage, vm's, etc.
