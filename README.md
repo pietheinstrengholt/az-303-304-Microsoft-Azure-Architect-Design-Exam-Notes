@@ -129,6 +129,7 @@
 
 ### Managed Identities
 - Azure Active Directory (AD):
+  - Azure AD Domain Services: is the managed identify infrastructure services, instead of doing AD in a Azure VM yourself.
   - Multi-tentant, which means it facilitates groups of users with common access rights.
   - Typically used together with SaaS.
   - Enables and allows Single Sign On (SSO) to any cloud or on prem app.
