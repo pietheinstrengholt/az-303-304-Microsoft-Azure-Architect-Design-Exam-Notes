@@ -1,7 +1,7 @@
 # Architecting Microsoft Azure Solutions (70-535)
 ||
 |:-:|
-| Disclaimer: This guide is being updated as I am preparing for the Exam 70-535. All the content referred here are available in public domain and not my creation. This is just a collection for easy reference. Use it with your own discretion. |
+| Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-535. Most of the content is available in public domain, so this repository is just a collection for easy reference. |
 ||
 
 ### Azure Geos and Regions
