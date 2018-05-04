@@ -1,4 +1,8 @@
-# 70-535-Architecting-Microsoft-Azure-Solutions-Exam-Notes
+# Architecting Microsoft Azure Solutions (70-535)
+||
+|:-:|
+| Disclaimer: This guide is being updated as I am preparing for the Exam 70-535. All the content referred here are available in public domain and not my creation. This is just a collection for easy reference. Use it with your own discretion. |
+||
 
 ### Azure Geos and Regions
 - 42 regions globally
