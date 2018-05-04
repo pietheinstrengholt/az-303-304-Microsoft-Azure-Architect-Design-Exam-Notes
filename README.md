@@ -143,7 +143,49 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Azure AD MFI: Multi factor authentification, e.g. use an additional mobile phone for authentification.
   - Azure AD P2: Privileged Identity Management.
     - Combination of groups, roles, MFI and temporary assigned access.
-    - Supports Identity protection. Centralized view of risks, access to all Cloud, etc. 
+    - Supports Identity protection. Centralized view of risks, access to all Cloud, etc.
+  - Important Azure AD features:
+    - Azure AD B2C (business to consumer)[^](https://azure.microsoft.com/documentation/articles/active-directory-b2c-overview/)
+      - Leverages existing social accounts(Facebook, MS, Google, Amazon, LinkedIn) or custom accounts
+      - It is the evolution of Azure AD Access Control Sevice - classic service (ACS) 
+    - Azure AD B2B (business to business)[^](https://azure.microsoft.com/documentation/articles/active-directory-b2b-collaboration-overview/)
+      - enable access to your organization’s applications from external business partner identities
+      - allows your business partners to use their own authentication credentials
+    - Azure AD Application Proxy[^](https://azure.microsoft.com/documentation/articles/active-directory-application-proxy-get-started/)
+      - enables users to leverage SSO to securely access on-premises web applications such as SharePoint sites and Outlook Web Access—without the need for a VPN.
+      - Application Proxy is available for the Basic and Premium editions of Azure AD
+    - Azure AD Directory Join [^](https://azure.microsoft.com/documentation/articles/active-directory-azureadjoin-windows10-devices-overview/)
+      - Directory Join enables Windows 10 devices to connect with Azure AD.
+      - Allows users to sign-in to Windows using Azure AD accounts, will enable SSO to Azure resources, Windows Store, device access restriction using group policy.
+      - Suitable for devices that cannot domain join
+    - Azure AD Domain Services [^](https://azure.microsoft.com/documentation/articles/active-directory-ds-overview/)
+      - Domain Services provide fully managed domain services such as domain join, group policy, LDAP, Kerberos/NTLM, and so on that are compatible with Windows Server Active Directory.
+    - Azure AD Device Registration [^](https://azure.microsoft.com/documentation/articles/active-directory-conditional-access-device-registration-overview/)
+      - enables mobile devices (such as iOS, Android, and Windows devices) to be registered in Azure AD
+      - enable conditional access to on-premises or Office 365 applications
+    - Azure AD Cloud App Discovery[^](https://azure.microsoft.com/documentation/articles/active-directory-cloudappdiscovery-whatis/)
+      - finds the applications being used (usage metrics), identifies users, and enables offline data analysis.
+      - enables IT departments to discover cloud applications used in their organization
+      - allows the applications to be brought under IT control to help mitigate risk of potential data leakage or other security threats
+    - Azure AD Connect Health [^](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health/)
+      - enables you to monitor and gain insights into the overall health of the integration between your on-premises Windows Server Active Directory/Active Directory Federation Service and Azure AD (or Office 365).
+    - Azure AD Identity Protection [^](https://azure.microsoft.com/documentation/articles/active-directory-identityprotection/) 
+      - is a security service that enables you to gain insights into potential security vulnerabilities affecting users in your organization (more specifically, their identities)
+
+    - Active Directory editions [^](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis#choose-an-edition) [^](https://azure.microsoft.com/en-us/pricing/details/active-directory/)
+      - **Free** - manage users, synchronize with on-premises Active Directory, establish SSO across Azure and Office 365, and access SaaS applications in the Azure AD application gallery
+      - **Basic** - Free tier, plus self-service password resets, group-based application access, customizable branding, Azure AD Application Proxy, and a 99.9 percent availability service level agreement (SLA)
+      - **Premium (P1, P2)** - Free and Basic tiers, plus self-service group management, advanced security reports and alerts, Multi-Factor Authentication, and licenses for Microsoft Identity Manager. P2: provides Identity Protection and Privileged Identity Management.
+
+| **Basic** | **Premium (P1 & P2)**|
+|---:|:---|
+|99.9% uptime SLA | Includes Microsoft Identity Manager (MIM) 2016 (an on-premises identity and access management suite)|
+| Self-service password reset |  Self-service password reset with write-back |
+| Azure AD Join for Windows 10 | Multi-facator authentication (MFA) |
+| SSO for 10 apps / user |  No SSO app limit |
+| Azure AD Application Proxy | MDM auto-enrollment|
+| | P2: Identity Protection and Privileged Identity Management|
+    
 - IDMaaS:
   - Identity Management as a Service.
 - Graph API:
