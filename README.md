@@ -12,6 +12,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Dynamic assigned.
   - You can point DNS using CNAME records. 
   - Static IP, allows A records to be set. SSL security. Useful for firewall settings. 4096 Private IP's per Vnet. 60 Public dynamic IP's, 20 Status public IP's
+  - The first and last IP addresses of each subnet are reserved for protocol conformance, along with the x.x.x.1-x.x.x.3 addresses of each subnet, which are used for Azure services.
 - Network Security Groups (NSGs):
   - can contain list of ACL rules.
   - Allow or denies access to resources based on priority.
