@@ -180,6 +180,17 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - Combination of groups, roles, MFI and temporary assigned access.
     - Supports Identity protection. Centralized view of risks, access to all Cloud, etc.
   - Important Azure AD features:
+    - Azure AD Connect:
+	  - Azure AD Connect will integrate your on-premises directories with Azure Active Directory.
+      - Azure AD Connect is the best way to connect your on-premises directory with Azure AD and Office 365.
+	  - Single tool to provide an easy deployment experience for synchronization and sign-in.
+	  - Users can use a single identity to access on-premises applications and cloud services such as Office 365.
+	  - Azure Federation Services
+	    - Federation is an optional part of Azure AD Connect and can be used to configure a hybrid environment using an on-premises AD FS infrastructure. This can be used by organizations to address complex deployments, such as domain join SSO, enforcement of AD sign-in policy, and smart card or 3rd party MFA.
+	  - Azure AD Synchronization
+	    - This component is responsible for creating users, groups, and other objects. It is also responsible for making sure identity information for your on-premises users and groups is matching the cloud.
+	  - Azure AD Connect Health [^](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health/)
+        - enables you to monitor and gain insights into the overall health of the integration between your on-premises Windows Server Active Directory/Active Directory Federation Service and Azure AD (or Office 365).
     - Azure AD B2C (business to consumer)[^](https://azure.microsoft.com/documentation/articles/active-directory-b2c-overview/)
       - Leverages existing social accounts(Facebook, MS, Google, Amazon, LinkedIn) or custom accounts
       - It is the evolution of Azure AD Access Control Sevice - classic service (ACS) 
@@ -202,11 +213,8 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
       - finds the applications being used (usage metrics), identifies users, and enables offline data analysis.
       - enables IT departments to discover cloud applications used in their organization
       - allows the applications to be brought under IT control to help mitigate risk of potential data leakage or other security threats
-    - Azure AD Connect Health [^](https://azure.microsoft.com/documentation/articles/active-directory-aadconnect-health/)
-      - enables you to monitor and gain insights into the overall health of the integration between your on-premises Windows Server Active Directory/Active Directory Federation Service and Azure AD (or Office 365).
     - Azure AD Identity Protection [^](https://azure.microsoft.com/documentation/articles/active-directory-identityprotection/) 
       - is a security service that enables you to gain insights into potential security vulnerabilities affecting users in your organization (more specifically, their identities)
-
     - Active Directory editions [^](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis#choose-an-edition) [^](https://azure.microsoft.com/en-us/pricing/details/active-directory/)
       - **Free** - manage users, synchronize with on-premises Active Directory, establish SSO across Azure and Office 365, and access SaaS applications in the Azure AD application gallery
       - **Basic** - Free tier, plus self-service password resets, group-based application access, customizable branding, Azure AD Application Proxy, and a 99.9 percent availability service level agreement (SLA)
@@ -231,6 +239,16 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - User does not have to provide username and password to Azure.
   - 3rd party takes care of this.
 
+- Considerations regarding Active Directory:
+  - My organization has made large investments in on-premises Windows Server Active Directory, but we want to extend identity to the cloud.
+    - The most widely used Azure identity solution is hybrid identity. If you’ve already made investments in on-premises AD DS, you can easily extend identity to the cloud using Azure AD Connect.
+  - My business was born in the cloud and we have no investments in on-premises identity solutions.
+    - Azure Active Directory is the best choice for cloud-only businesses with no on-premises investments.
+  - I need lightweight Azure VM configuration and control to meet on-premises identity requirements for app development and testing.
+    - Azure AD Domain Services is a good choice if you need to use AD DS for lightweight Azure VM configuration control or are looking to develop or migrate legacy, directory-aware on-premises applications to the cloud.
+  - I need to support a few virtual machines in Azure, but my company is still heavily invested in on-premises Active Directory (AD DS).
+    - Use DIY AD DS to use Azure VMs when you need to support a few virtual machines and have large AD DS investments on-premises.
+  
 ### Hybrid Identities
 - Hybrid entities:
   - Mixure of cloud and on prem network.
