@@ -35,11 +35,13 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Azure App Service (web apps, mobile apps, logic apps, api apps)
 - Web Apps: 
   - Shared or dedicated virtual machines, managed, any language, ASP.net, NodeJS, PHP or Python.
+  - Supported languages: NodeJs, Java, PHP, .NET Core, Ruby, Go, Apache Tomcat
   - Powershell as scripting.
   - CI/CD capabilities and security options.
   - The standard pricing tier allows unlimited number of apps.
   - Limited only by CPU, Storage and RAM.
   - In fact, all tiers at Basic or above are unlimited.
+  - Deployment options: FTP, Local Git, GitHub, Bitbucket
 - Mobile Apps: 
   - Supports any language with the Azure SDK.
   - Supports single sign on via Azure AD FS.
@@ -74,7 +76,6 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Availability zones:
     - An Availability Zone is a physically separate zone within an Azure region. There are three Availability Zones per supported Azure region. 
 	- Each Availability Zone has a distinct power source, network, and cooling, and is logically separate from the other Availability Zones within the Azure region.
-  
 
 ### VPN & Express Route
 - P2S Point-to-Site VPN: 
@@ -354,7 +355,11 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 - HPC pack: on premises, hybrid or IaaS (spin up VM's) or PaaS (Azure Batch)
 - Head node (controls the distribution of the jobs, can be on prem or cloud) and Compute nodes (execution of tasks)
 - Azure Batch:
-  - Job scheduling as a service, application lifecycle management, budget, quotas, users and limites.
+  - Use Azure Batch to run large-scale parallel and high-performance computing (HPC) batch jobs efficiently in Azure.
+  - Azure Batch creates and manages a pool of compute nodes (virtual machines), installs the applications you want to run, and schedules jobs to run on the nodes. 
+  - Includes job scheduling as a service, application lifecycle management, budget, quotas, users and limites.
+  - There is no cluster or job scheduler software to install, manage, or scale. Instead, you use Batch APIs and tools, command-line scripts, or the Azure portal to configure, manage, and monitor your jobs.
+  - Batch works well with intrinsically parallel (also known as "embarrassingly parallel") workloads. 
 
 ### Designing Long Running Applications
 - Jobs that take days, weeks, with the risk of interupption.
@@ -457,8 +462,12 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Recovery Point Objective (RPO) = acceptable time window of data loss.
   - Locally redundant storage (LRS) and Zone Redundant Storage (ZRS) storage stores 3 copies of your data in a single region, while Azure Geo Redundant Storage (GRS) and Read-access Azure Geo Redundant Storage (RA-GRS) stores 6 copies across two regions.
   - Azure Managed Disks
-    - Premium Managed Disks are backed by Solid-State Drives (SSDs) 
-	- Standard Managed Disks are backed by regular spinning disks. 
+    - Premium Managed Disks are backed by Solid-State Drives (SSDs).
+	  - By default, disk caching policy is Read-Only for all the Premium data disks, and Read-Write for the Premium operating system disk attached to the VM. 
+	- Standard Managed Disks are backed by regular spinning disks.
+	- You can upload either generalized and specialized VHDs.
+      - Generalized VHD - has had all of your personal account information removed using Sysprep.
+      - Specialized VHD - maintains the user accounts, applications, and other state data from your original VM.
     - Locally redundant storage (LRS)
       - Replicates your data three times within the region in which you created your storage account.
   - Storage account-based disks
@@ -550,6 +559,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 - Hyper-V and Hyper-V Replica:
   - Hyper-V Replica allows to have a replicated version of the virtual machine.
   - Azure Site Recovery:
+    - Azure Site Recovery protects your VMs from a major disaster scenario, when a whole region experiences an outage due to major natural disaster or widespread service interruption.
     - Allows the primary site to be the secondary if fail-over is required.
     - Operates in a hybrid model.
     - Between VMM and Azure.
@@ -557,13 +567,16 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - Between on-premises sites.
     - Azure Site Recovery allows you to automate the replication of virtual machines data whether they are in Azure, or on prem.
 - Azure Backup for VMs:
-  - Use Azure backup to backup Azure Resource Manager VM's.
+  - Use Azure Backup to backup Azure Resource Manager VM's.
 
 ### Azure Backup
 - Overview of Azure Backup:
+  - For backing up Azure VMs running production workloads, use Azure Backup. 
+  - Azure Backup supports application-consistent backups for both Windows and Linux VMs. 
   - Azure Backup encrypts the backups in the cloud.
   - No cost for data transmission into Azure.
   - Full or incremental backups.
+    - A managed snapshot is a read-only full copy of a managed disk. Snapshots exist independent of the source disk and can be used to create new managed disks for rebuilding a VM. 
   - File-level restore (instead of full restore).
   - Azure Backup Vault: Recovery Services creates a Backup Vault for backups.
   - Recommended to use different region.
@@ -651,14 +664,15 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Allows to no longer hard code the key inside the application.
   - Has the option to use a hardware component.
 - Virtual Machine Scale Sets (VMSS):
-  - Allows to deploy multiple virtual machines as a set.
-  - True autoscaling.
+  - Allows to deploy multiple virtual machines as a set. Automatically create from central configuration
+  - True autoscaling. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule.
   - Increases or decreases based on the performance (I/O or CPU) or fixed schedules.
   - Limit of 1000 generic.
   - 300 custom.
   - Recommended to use placement groups (above 100 use singlePlacementGroup= false).
   - Don't get public IP's by default.
   - Use a load balancer and jump boxes to connect.
+  - There is no additional cost to scale sets. You only pay for the underlying compute resources such as the VM instances, load balancer, or Managed Disk storage. 
 - Overview of Containers in Azure:
   - AKS
   - Container instances (isolated containers, windows or linux, public ip, custom size)
