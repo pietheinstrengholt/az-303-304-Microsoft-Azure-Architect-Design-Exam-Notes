@@ -5,6 +5,9 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 - 42 regions globally
 - Geos: East US, Canada Central, North Europe.
 - Each region has a pair for highest-speed connections and highest availability.
+- Availability zones:
+  - An Availability Zone is a physically separate zone within an Azure region. There are three Availability Zones per supported Azure region. 
+  - Each Availability Zone has a distinct power source, network, and cooling, and is logically separate from the other Availability Zones within the Azure region.
 
 ### Azure Virtual Networks
 - IP Addresses:
@@ -88,9 +91,6 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - Availability sets ensure that the VMs you deploy on Azure are distributed across multiple isolated hardware nodes in a cluster.
     - At least two instances are deployed to meet the 99.95% Azure SLA.
     - Do NOT mix workloads in an Availability Set.
-  - Availability zones:
-    - An Availability Zone is a physically separate zone within an Azure region. There are three Availability Zones per supported Azure region. 
-	- Each Availability Zone has a distinct power source, network, and cooling, and is logically separate from the other Availability Zones within the Azure region.
 
 ### VPN & Express Route
 - P2S Point-to-Site VPN: 
@@ -220,7 +220,12 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - Azure AD Identity Protection [^](https://azure.microsoft.com/documentation/articles/active-directory-identityprotection/) 
       - Is a security service that enables you to gain insights into potential security vulnerabilities affecting users in your organization (more specifically, their identities)
     - Azure Active Directory Privileged Identity Management (PIM):
-	  - With Azure Active Directory Privileged Identity Management (PIM), you can manage, control, and monitor access to Azure Resources within your organization. 
+	  - Azure Active Directory Identity Protection is a feature of the Azure AD Premium P2 edition that provides you an overview of the risk events and potential vulnerabilities affecting your organization’s identities.
+	  - With Azure Active Directory Privileged Identity Management (PIM), you can manage, control, and monitor access to Azure Resources within your organization.
+	  - Identity Protection uses adaptive machine learning algorithms and heuristics to detect anomalies and risk events that may indicate that an identity has been compromised.
+	- Managed Service Identity
+	  - Managed Service Identity (MSI) is a public preview feature of Azure Active Directory.
+	  - Azure Key Vault provides a way to securely store credentials and other keys and secrets, but your code needs to authenticate to Key Vault to retrieve them. Managed Service Identity (MSI) makes solving this problem simpler by giving Azure services an automatically managed identity in Azure Active Directory (Azure AD).
 	- Active Directory editions [^](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis#choose-an-edition) [^](https://azure.microsoft.com/en-us/pricing/details/active-directory/)
       - **Free** - manage users, synchronize with on-premises Active Directory, establish SSO across Azure and Office 365, and access SaaS applications in the Azure AD application gallery
       - **Basic** - Free tier, plus self-service password resets, group-based application access, customizable branding, Azure AD Application Proxy, and a 99.9 percent availability service level agreement (SLA)
@@ -292,8 +297,13 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - Client-side encryption, to encrypt the data before it is transferred into storage and to decrypt the data after it is transferred out of storage.
   - Encryption at rest:
     - Storage Service Encryption allows you to request that the storage service automatically encrypt data when writing it to Azure Storage.
+	  - All data written to Azure Storage is encrypted through 256-bit AES encryption, one of the strongest block ciphers available.
+	  - Storage Service Encryption is enabled for all new and existing storage accounts and cannot be disabled. Because your data is secured by default, you don't need to modify your code or applications to take advantage of Storage Service Encryption.
     - Client-side Encryption also provides the feature of encryption at rest.
     - Azure Disk Encryption allows you to encrypt the OS disks and data disks used by an IaaS virtual machine.
+	  - Azure Disk Encryption is a new capability that helps you encrypt your Windows and Linux IaaS virtual machine disks. 
+	  - Azure Disk Encryption leverages the industry standard BitLocker feature of Windows and the DM-Crypt feature of Linux to provide volume encryption for the OS and the data disks. 
+	  - The solution is integrated with Azure Key Vault to help you control and manage the disk-encryption keys and secrets in your key vault subscription.
 - Azure Operations Management Suite:
   - A Suite to monitor traffic, see unusual things, etc.
 
@@ -467,8 +477,16 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 
 ### Integrating Azure Services with a Solution
 - Azure Machine Learning:
+  - Azure Machine Learning is an integrated, end-to-end data science and advanced analytics solution. It enables data scientists to prepare data, develop experiments, and deploy models at cloud scale.
   - Cloud service that allow to create jobs to predictive do analytics.
   - Examines large amounts of data to detect patterns, generate code to recognize those patterns.
+  - Azure Machine Learning is built on top of the following open source technologies: Jupyter Notebook, Apache Spark, Docker, Kubernetes, Python, Conda
+  - The main components of Azure Machine Learning are:
+    - Azure Machine Learning Workbench
+    - Azure Machine Learning Experimentation Service
+    - Azure Machine Learning Model Management Service
+    - Microsoft Machine Learning Libraries for Apache Spark (MMLSpark Library)
+    - Visual Studio Code Tools for AI
 - Big Data:
   - HDInsight, uses Apache Hadoop (HortonWorks).
   - Manage, Analyze and Report.
@@ -476,7 +494,11 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - PaaS service, integrated with REST API's and .NET SDK.
   - Supports mulitple languages, simple query syntax, suggestions, highlight matches, facets and filters.
 - Azure Time Series:
-  - Time Series Insights is built for storing, visualizing, and querying large amounts of time series data, such as that generated by IoT devices. 
+  - Time Series Insights is built for storing, visualizing, and querying large amounts of time series data, such as that generated by IoT devices.
+- Cognitive Services:
+  - Microsoft Cognitive Services (formerly Project Oxford) are a set of APIs, SDKs and services available to developers to make their applications more intelligent, engaging and discoverable.
+- Azure Bot Service:
+  - Azure Bot Service provides tools (SDK) to build, test, deploy, and manage intelligent bots all in one place.
 
 ### Scalability and Performance of Azure Web Apps
 - Globally Scale Azure Web Apps:
@@ -785,8 +807,10 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Has API Gateway features like API limits, caching, user and groups, policies, Open or Protected products, reporting, developer focussed portal and documentation, tokens, etc.
 - Azure Key Vault:
   - Manage cryptographic keys, also third party keys.
-  - Allows to no longer hard code the key inside the application.
+  - By using Key Vault, you can encrypt keys and secrets (such as authentication keys, storage account keys, data encryption keys, .PFX files, and passwords) using keys protected by hardware security modules (HSMs).
+  - Allows to no longer hard code the key inside the application. You retrieve the value by referencing the key vault and secret in your parameter file. The value is never exposed because you only reference its key vault ID. 
   - Has the option to use a hardware component.
+  - ARM templates: When creating the key vault, set the enabledForTemplateDeployment property to true. By setting this value to true, you allow access from Resource Manager templates during deployment.
 - Virtual Machine Scale Sets (VMSS):
   - Allows to deploy multiple virtual machines as a set. Automatically create from central configuration
   - True autoscaling. The number of VM instances can automatically increase or decrease in response to demand or a defined schedule.
