@@ -32,8 +32,18 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 
 ### Azure Compute
 - Azure Compute:
-  - Azure App Service (web apps, mobile apps, logic apps, api apps)
-- Web Apps: 
+  - Azure App Service (web apps, mobile apps, logic apps, api apps).
+  - In App Service, an app runs in an App Service plan. An App Service plan defines a set of compute resources for a web app to run.
+  - Different tiers:
+    - Shared compute: Free and Shared, the two base tiers, runs an app on the same Azure VM as other App Service apps, including apps of other customers. These tiers allocate CPU quotas to each app that runs on the shared resources, and the resources cannot scale out.
+    - Dedicated compute: The Basic, Standard, Premium, and PremiumV2 tiers run apps on dedicated Azure VMs. Only apps in the same App Service plan share the same compute resources. The higher the tier, the more VM instances are available to you for scale-out.
+    - Isolated: This tier runs dedicated Azure VMs on dedicated Azure Virtual Networks, which provides network isolation on top of compute isolation to your apps. It provides the maximum scale-out capabilities.
+    - Consumption: This tier is only available to function apps. It scales the functions dynamically depending on workload. For more information, see Azure Functions hosting plans comparison.
+  - Azure App Service Environment is an Azure App Service feature that provides a fully isolated and dedicated environment for securely running App Service apps at high scale.
+    - An ASE is dedicated exclusively to a single subscription and can host 100 App Service Plan instances. The range can span 100 instances in a single App Service plan to 100 single-instance App Service plans, and everything in between.
+- Web Apps:
+  - Azure App Service Web Apps = Web Apps
+  - Is a service for hosting web applications, REST APIs, and mobile back ends. 
   - Shared or dedicated virtual machines, managed, any language, ASP.net, NodeJS, PHP or Python.
   - Supported languages: NodeJs, Java, PHP, .NET Core, Ruby, Go, Apache Tomcat
   - Powershell as scripting.
@@ -128,12 +138,16 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Does encoding and decoding of media.
   - Useful for websites that work with video and video-streaming content.
 - Azure Content Delivery Network (CDN):
+  - A content delivery network (CDN) is a distributed network of servers that can efficiently deliver web content to users.
+  - CDNs store cached content on edge servers in point-of-presence (POP) locations that are close to end users, to minimize latency.
   - Serves out static content from much faster locations.
 - Azure Active Directory:
   - Identity management
 - Microsoft Azure Redis Cache:
   - Caching engine using Redis.
   - Useful for frequently accessed content or sessions.
+  - If you want to create caches larger than 53 GB or want to shard data across multiple Redis nodes, you can use Redis clustering which is available in the Premium tier.
+  - Import/Export is an Azure Redis Cache data management operation which allows you to import data into Azure Redis Cache or export data from Azure Redis Cache by importing and exporting a Redis Cache Database (RDB) snapshot from a premium cache to a page blob in an Azure Storage Account. 
 - Azure Multi-Factor Authentication: 
   - Additional Authentication with mobile phone (sms), mobile app or telephone call
 - Azure Service Bus: 
@@ -488,7 +502,6 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
       - Premium storage is backed by Solid-State Drives (SSDs) and is charged based on the capacity of the disk.
       - Standard storage is backed by regular spinning disks and is charged based on the in-use capacity and desired storage availability.
         - For RA-GRS, there is an additional Geo-Replication Data Transfer charge for the bandwidth of replicating that data to another Azure region.
-  
 - Azure Resource Manager (ARM) Templates:
   - Use Azure Resource Manager (ARM) Templates to create automated deployment of resources for highly available web apps.
   - You leverage from having the same configuration across different locations or regions.
@@ -686,8 +699,8 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Quick, auto scaling, enables multi-cloud, provides auto-restart.
   - Uses a manifest file (YAML - .yml).
     - Similar to ARM templates.
-  - Azure Container Instances:
-    - Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
+- Azure Container Instances:
+  - Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
     - Azure Container Instances is a great solution for any scenario that can operate in isolated containers, including simple applications, task automation, and build jobs.
 	- Co-scheduled groups: Azure Container Instances supports scheduling of multi-container groups that share a host machine, local network, storage, and lifecycle. This enables you to combine your main application container with other supporting role containers, such as logging sidecars.
   - If you are looking to deploy your application in Linux environment and are comfortable with an orchestrator such as Swarm, Kubernetes or DC/OS, use ACS. A typical 3 tier application (such as a web front end, a caching layer, a API layer and a database layer) can be easily container-ized with 1 single dockerfile (or docker-compose file). It can be continuously decomposed into smaller services gradually. This approach provides an immediate benefit of portability of such an application. Containers is Open technology and there is great community support around containers.
