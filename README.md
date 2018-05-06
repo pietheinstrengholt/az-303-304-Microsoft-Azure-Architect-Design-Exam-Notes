@@ -756,9 +756,17 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Integrates with:
     - Azure Cosmos DB
     - Azure Event Hubs
+	  - Azure Event Hubs is a highly scalable data streaming platform and event ingestion service, capable of receiving and processing millions of events per second.
+	  - Event Hubs can process and store events, data, or telemetry produced by distributed software and devices.
+	  - Data sent to an event hub can be transformed and stored using any real-time analytics provider or batching/storage adapters. 
     - Azure Event Grid
+	  - Azure Event Grid allows you to easily build applications with event-based architectures.
+	  - Event Grid has built-in support for events coming from Azure services, like storage blobs and resource groups.
+	  - Event Grid also has custom support for application and third-party events, using custom topics and custom webhooks.
     - Azure Mobile Apps (tables)
     - Azure Notification Hubs
+	  - Azure Notification Hubs provide an easy-to-use, multi-platform, scaled-out push engine.
+	  - With a single cross-platform API call, you can easily send targeted and personalized push notifications to any mobile platform from any cloud or on-premises backend.
     - Azure Service Bus (queues and topics)
     - Azure Storage (blob, queues, and tables)
     - GitHub (webhooks)
