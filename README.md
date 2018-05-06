@@ -629,7 +629,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 
 ### New services
 - Azure functions:
-  - small functions. (Bash, Batch, C#, F#, javascript, PHP, Powershell, Python).
+  - Small functions. (Bash, Batch, C#, F#, javascript, PHP, Powershell, Python).
   - Consumption plan: When your function runs, Azure provides all of the necessary computational resources. You don't have to worry about resource management, and you only pay for the time that your code runs.
   - App Service plan: Run your functions just like your web, mobile, and API apps. When you are already using App Service for your other applications, you can run your functions on the same plan at no additional cost.
   - Functions provides templates to get you started with key scenarios, including the following:
@@ -654,6 +654,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - GitHub (webhooks)
     - On-premises (using Service Bus)
     - Twilio (SMS messages)
+  - If an application needs an HTTP endpoint for a potentially long running  process without getting into a elaborate programming model, Azure Functions is a good option. They can be developed as an extension of an existing application. They support routing based endpoints similar to an API. They support AAD and other authentication, SSL, Custom Domain, RBAC, etc. They have a good CI/CD support as well. They are in the process of integrating .Net Core support. So if you are looking to get a simple application model and don't want to get into setting up/managing underlying infrastructure, Azure Functions is good choice.
 - Stream Analytics:
   - For streaming data.
   - Uses inputs (topics), queries (pattern matching) and outputs (subscribers)
@@ -662,10 +663,11 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - IoT Hub supports more protocols and supports 2 way communication.
   - State management
   - Events Hub = one way and not state management
-- Service Fabric Cluster:
+- Service Fabric:
   - Microservices platform.
   - Microsofts' internal microservices platform.
   - Supports state management, monitoring, fail-over, load balancing, etc.
+  - If an application must have its state saved locally, then use Service Fabric. It is also a good choice if you are looking to deploy application in Windows server ecosystem(Linux support is in the works as well!). Refer to common workloads on Service Fabric for more discussion on applications that can benefit from Service Fabric. Biggest benefit is that Service Fabric applications can run on-premise, on Azure or even in other cloud platforms also.
   - https://stackoverflow.com/questions/48415057/difference-between-kubernetes-and-service-fabric
 - Azure Cloud Shell:
   - Alternative to Powershell.
@@ -688,6 +690,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
     - Azure Container Instances is a great solution for any scenario that can operate in isolated containers, including simple applications, task automation, and build jobs.
 	- Co-scheduled groups: Azure Container Instances supports scheduling of multi-container groups that share a host machine, local network, storage, and lifecycle. This enables you to combine your main application container with other supporting role containers, such as logging sidecars.
+  - If you are looking to deploy your application in Linux environment and are comfortable with an orchestrator such as Swarm, Kubernetes or DC/OS, use ACS. A typical 3 tier application (such as a web front end, a caching layer, a API layer and a database layer) can be easily container-ized with 1 single dockerfile (or docker-compose file). It can be continuously decomposed into smaller services gradually. This approach provides an immediate benefit of portability of such an application. Containers is Open technology and there is great community support around containers.
 - API Management for API Apps and Serverless Apps:
   - API Management (APIM) helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.
   - Contains an API Gateway service, Azure portal and Developer portal 
