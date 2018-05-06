@@ -67,9 +67,14 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Stopped: The virtual machine is no longer running, but you are still paying for it.
   - Deallocated: You are no longer charged for the VM. Can use the API or Portal to deallocate the VM.
   - Availability Sets:
+    - An availability set is a logical grouping of VMs within a datacenter that allows Azure to understand how your application is built to provide for redundancy and availability.
     - Availability sets ensure that the VMs you deploy on Azure are distributed across multiple isolated hardware nodes in a cluster.
-    - At least two instances are deployed.
+    - At least two instances are deployed to meet the 99.95% Azure SLA.
     - Do NOT mix workloads in an Availability Set.
+  - Availability zones:
+    - An Availability Zone is a physically separate zone within an Azure region. There are three Availability Zones per supported Azure region. 
+	- Each Availability Zone has a distinct power source, network, and cooling, and is logically separate from the other Availability Zones within the Azure region.
+  
 
 ### VPN & Express Route
 - P2S Point-to-Site VPN: 
@@ -451,6 +456,25 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Recovery Time Objective (RTO) = maximym amount of time to restore application functionality.
   - Recovery Point Objective (RPO) = acceptable time window of data loss.
   - Locally redundant storage (LRS) and Zone Redundant Storage (ZRS) storage stores 3 copies of your data in a single region, while Azure Geo Redundant Storage (GRS) and Read-access Azure Geo Redundant Storage (RA-GRS) stores 6 copies across two regions.
+  - Azure Managed Disks
+    - Premium Managed Disks are backed by Solid-State Drives (SSDs) 
+	- Standard Managed Disks are backed by regular spinning disks. 
+    - Locally redundant storage (LRS)
+      - Replicates your data three times within the region in which you created your storage account.
+  - Storage account-based disks
+    - Locally redundant storage (LRS)
+      - Replicates your data three times within the region in which you created your storage account.
+    - Zone redundant storage (ZRS)
+      - Replicates your data three times across two to three facilities, either within a single region or across two regions.
+    - Geo-redundant storage (GRS)
+      - Replicates your data to a secondary region that is hundreds of miles away from the primary region.
+    - Read-access geo-redundant storage (RA-GRS)
+      - Replicates your data to a secondary region, as with GRS, but also then provides read-only access to the data in the secondary location.
+	- Unmanaged disks:
+      - Premium storage is backed by Solid-State Drives (SSDs) and is charged based on the capacity of the disk.
+      - Standard storage is backed by regular spinning disks and is charged based on the in-use capacity and desired storage availability.
+        - For RA-GRS, there is an additional Geo-Replication Data Transfer charge for the bandwidth of replicating that data to another Azure region.
+  
 - Azure Resource Manager (ARM) Templates:
   - Use Azure Resource Manager (ARM) Templates to create automated deployment of resources for highly available web apps.
   - You leverage from having the same configuration across different locations or regions.
@@ -503,9 +527,11 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - Overall health of the system(s).
 - Patching Strategy:
   - Fault Domain = everything that can be seen as a single point of failure.
+    - A fault domain is a logical group of underlying hardware that share a common power source and network switch, similar to a rack within an on-premises datacenter. As you create VMs within an availability set, the Azure platform automatically distributes your VMs across these fault domains. This approach limits the impact of potential physical hardware failures, network outages, or power interruptions.
   - Availability set allows to run outside a single fault domain.
   - Should have at least 2 instances of each role.
   - Update Domain = For PaaS apps, Microsoft will try to update the apps for only a single Update Domain at a time.
+    - An update domain is a logical group of underlying hardware that can undergo maintenance or be rebooted at the same time. As you create VMs within an availability set, the Azure platform automatically distributes your VMs across these update domains. This approach ensures that at least one instance of your application always remains running as the Azure platform undergoes periodic maintenance. The order of update domains being rebooted may not proceed sequentially during planned maintenance, but only one update domain is rebooted at a time.
   - Maintenance is planned.
   - Keep you applications across multiple update domains to avoid downtime.
   - Maximum of 20 update domains per role service.
