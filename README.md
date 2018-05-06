@@ -112,7 +112,9 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 ### Azure Services & Solutions:
 - Azure Load Balancer:
   - Load Balancer to balance the web traffic.
+  - You can also reach a load balancer front end from an on-premises network in a hybrid scenario. Both scenarios use a configuration that is known as an internal load balancer.
   - Checks with 15 seconds interval is servers are still alive.
+  - Allows Port forward traffic to a specific port on specific VMs with inbound network address translation (NAT) rules.
   - Azure Load Balancer works at layer-4, or transport level.
   - Stickyness, uses 5 tuples (source IP, destination IP, protocol (tcp/udp), source port and destination port) so that user's traffic is always routed to same machine.
     - SourceIP (2 tuples): source and destination IP only
@@ -121,14 +123,21 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Load Balancer to balance internal traffic.
   - Allows different ports and security configuration options.
 - Azure Application Gateway:
+  - Azure Application Gateway is a web traffic load balancer that enables you to manage traffic to your web applications.
   - Gateway that has a WAF (Web Application Firewall) to inspect traffic.
+  - Application Gateway you can be even more specific. For example, you can route traffic based on the incoming URL. So if /images is in the incoming URL, you can route traffic to a specific set of servers (known as a pool) configured for images.
   - Is able to perform robin traffic.
   - Allows Secure Sockets Layer-offload (SSL).
+  - Cookie-based session affinity feature is useful when you want to keep a user session on the same server. 
   - Can route traffic based on content inspection.
   - Azure Application Gateway is a layer-7 (application layer) load balancer.
 - Traffic Manager:
+  - Microsoft Azure Traffic Manager allows you to control the distribution of user traffic for service endpoints in different datacenters. 
   - Manages and balances the load between different regions.
-  - Works at DNS level.
+  - Service endpoints supported by Traffic Manager include Azure VMs, Web Apps, and cloud services.
+  - You can also use Traffic Manager with external, non-Azure endpoints.
+  - Traffic Manager is not a proxy or a gateway. Traffic Manager does not see the traffic passing between the client and the service.
+  - Works at DNS level. Traffic Manager uses the Domain Name System (DNS) to direct client requests to the most appropriate endpoint based on a traffic-routing method and the health of the endpoints. 
   - Uses different routing methods:
     - Performance: based on the DNS location of the user
     - Priority: primary and failover targets
@@ -376,10 +385,22 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Monitoring or tokens. Audit, logging, validation of inputs, SSL or cryptographic. 
 
 ### Hybrid Applications
-- Service Bus Relay:
+- Azure Relay / Service Bus Relay:
   - Allows apps to connect to your on premises services.
   - The Service Bus Relay runs in the cloud accepts the request and securely passes on that request to the WCF service running indside the corp network.
-
+  - Azure Relay has two features:
+    - Hybrid Connections - Uses the open standard web sockets enabling multi-platform scenarios. Hybrid Connections can be used to access application resources in other networks. It provides access from your app to an application endpoint.
+    - WCF Relays - Uses Windows Communication Foundation (WCF) to enable remote procedure calls. WCF Relay is the legacy relay offering that many customers already use with their WCF programming models.
+- Self-hosted Integration Runtime / Data Management Gateway:
+  - The Self-hosted Integration Runtime / Data management gateway is a client agent that you must install in your on-premises environment to copy data between cloud and on-premises data stores.
+    - Data movement: Move data between data stores in public network and data stores in private network (on-premise or virtual private network). It provides support for built-in connectors, format conversion, column mapping, and performant and scalable data transfer.
+    - Activity dispatch: Dispatch and monitor transformation activities running on a variety of compute services such as Azure HDInsight, Azure Machine Learning, Azure SQL Database, SQL Server, and more.
+    - SSIS package execution: Natively execute SQL Server Integration Services (SSIS) packages in a managed Azure compute environment.
+  - Data Management Gateway has now been rebranded as Self-hosted Integration Runtime.
+- Azure On-premises Data Gateway
+  - The on-premises data gateway acts as a bridge, providing secure data transfer between on-premises data sources and your Azure Analysis Services servers in the cloud.
+  - Can be necessary for connecting to on-premises data sources only.
+	
 ### Azure Media Services
 - Azure Media Services:
   - Supports online streaming of video's for live and recorded.
@@ -422,6 +443,8 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 - Azure Search:
   - PaaS service, integrated with REST API's and .NET SDK.
   - Supports mulitple languages, simple query syntax, suggestions, highlight matches, facets and filters.
+- Azure Time Series:
+  - Time Series Insights is built for storing, visualizing, and querying large amounts of time series data, such as that generated by IoT devices. 
 
 ### Scalability and Performance of Azure Web Apps
 - Globally Scale Azure Web Apps:
@@ -821,3 +844,12 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Run SSIS packages in the Cloud.
   - Piplelines (locical group of activities), activity (processing step), dataset (source of the data), linked services (input and output services).
   - Azure Data Factory v2 is in preview.
+- Azure Data Lake Analytics:
+  - Azure Data Lake Analytics is an on-demand analytics job service that simplifies big data.
+  - Instead of deploying, configuring, and tuning hardware, you write queries to transform your data and extract valuable insights.
+  - Data Lake Analytics includes U-SQL, a query language that extends the familiar, simple, declarative nature of SQL with the expressive power of C#.
+  - Data Lake Analytics deep integrates with Visual Studio.
+- Azure Analysis Services:
+  - Azure Analysis Services provides enterprise-grade data modeling in the cloud.
+  - It is a fully managed platform as a service (PaaS), integrated with Azure data platform services.
+  - With Analysis Services, you can mashup and combine data from multiple data sources, define metrics, and secure your data in a single, trusted semantic data model.
