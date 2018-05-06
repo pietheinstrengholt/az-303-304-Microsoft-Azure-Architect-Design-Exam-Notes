@@ -52,7 +52,12 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Easy migrate existing API's
   - supports CORS
   - Access control and supports integration with Logic Apps. 
-  - Logic Apps: Build workflows. Trigger based (If this then that), causes actions to happen. Works with templates. Can be created in the browser.
+  - Logic Apps:
+    - Logic Apps helps you build, schedule, and automate processes as workflows so you can integrate apps, data, systems, and services across enterprises or organizations.
+    - Build workflows.
+	- Trigger based (If this then that), causes actions to happen. 
+	- Works with templates. 
+	- Can be created in the browser.
 - Virtual Machines: 
   - Virtual Machines which come in many different flavors and types.
   - Microsoft limits you to 10,000 VMs in a single subscription.
@@ -625,7 +630,30 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 ### New services
 - Azure functions:
   - small functions. (Bash, Batch, C#, F#, javascript, PHP, Powershell, Python).
-  - Consumption plan (per requests) or App Service Plan (uses VM's).
+  - Consumption plan: When your function runs, Azure provides all of the necessary computational resources. You don't have to worry about resource management, and you only pay for the time that your code runs.
+  - App Service plan: Run your functions just like your web, mobile, and API apps. When you are already using App Service for your other applications, you can run your functions on the same plan at no additional cost.
+  - Functions provides templates to get you started with key scenarios, including the following:
+    - HTTPTrigger - Trigger the execution of your code by using an HTTP request. For an example, see Create your first function.
+    - TimerTrigger - Execute cleanup or other batch tasks on a predefined schedule. For an example, see Create a function triggered by a timer.
+    - GitHub webhook - Respond to events that occur in your GitHub repositories. For an example, see Create a function triggered by a GitHub webhook.
+    - Generic webhook - Process webhook HTTP requests from any service that supports webhooks. For an example, see Create a function triggered by a generic webhook.
+    - CosmosDBTrigger - Process Azure Cosmos DB documents when they are added or updated in collections in a NoSQL database. For an example, see Create a function triggered by Azure Cosmos DB.
+    - BlobTrigger - Process Azure Storage blobs when they are added to containers. You might use this function for image resizing. For more information, see Blob storage bindings.
+    - QueueTrigger - Respond to messages as they arrive in an Azure Storage queue. For an example, see Create a function triggered by Azure Queue storage.
+    - EventHubTrigger - Respond to events delivered to an Azure Event Hub. Particularly useful in application instrumentation, user experience or workflow processing, and Internet of Things (IoT) scenarios. For more information, see Event Hubs bindings.
+    - ServiceBusQueueTrigger - Connect your code to other Azure services or on-premises services by listening to message queues. For more information, see Service Bus bindings.
+    - ServiceBusTopicTrigger - Connect your code to other Azure services or on-premises services by subscribing to topics. For more information, see Service Bus bindings.
+  - Integrates with:
+    - Azure Cosmos DB
+    - Azure Event Hubs
+    - Azure Event Grid
+    - Azure Mobile Apps (tables)
+    - Azure Notification Hubs
+    - Azure Service Bus (queues and topics)
+    - Azure Storage (blob, queues, and tables)
+    - GitHub (webhooks)
+    - On-premises (using Service Bus)
+    - Twilio (SMS messages)
 - Stream Analytics:
   - For streaming data.
   - Uses inputs (topics), queries (pattern matching) and outputs (subscribers)
@@ -656,9 +684,14 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Quick, auto scaling, enables multi-cloud, provides auto-restart.
   - Uses a manifest file (YAML - .yml).
     - Similar to ARM templates.
+  - Azure Container Instances:
+    - Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
+    - Azure Container Instances is a great solution for any scenario that can operate in isolated containers, including simple applications, task automation, and build jobs.
+	- Co-scheduled groups: Azure Container Instances supports scheduling of multi-container groups that share a host machine, local network, storage, and lifecycle. This enables you to combine your main application container with other supporting role containers, such as logging sidecars.
 - API Management for API Apps and Serverless Apps:
-  - API Gateway service.
-  - Has API Gateway features like API limits, caching, reporting, developer focussed portal and documentation, tokens, etc.
+  - API Management (APIM) helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.
+  - Contains an API Gateway service, Azure portal and Developer portal 
+  - Has API Gateway features like API limits, caching, user and groups, policies, Open or Protected products, reporting, developer focussed portal and documentation, tokens, etc.
 - Azure Key Vault:
   - Manage cryptographic keys, also third party keys.
   - Allows to no longer hard code the key inside the application.
