@@ -288,6 +288,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Containers have security.
   - Blob = binary large object.
   - 500TB capacity.
+  - Endpoint: http://myaccount.blob.core.windows.net/mycontainer/myblob
   - Block blobs:
     - Optimized for streaming and storing objects in the Cloud.
     - Block blobs are idea for large binary (or text) file storage that don't need to be frequently read from or accessed to.
@@ -320,7 +321,26 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Encryption (can use SSL as well).
   - Shared Access Signature (SAS) can give temporary access to storage.
   - Shared Access Policy (SAP) can be given to users and revoked as needed.
-
+- Deciding when to use Azure Blobs, Azure Files, or Azure Disks
+  - Azure Files:
+    - Provides an SMB interface, client libraries, and a REST interface that allows access from anywhere to stored files.
+	- You want to "lift and shift" an application to the cloud which already uses the native file system APIs to share data between it and other applications running in Azure.
+	- You want to store development and debugging tools that need to be accessed from many virtual machines.
+	- Endpoint: http://myaccount.file.core.windows.net/myshare/myfile.txt
+	- 5 TiB file shares and Up to 1 TiB per file
+  - Azure Blobs:
+    - Provides client libraries and a REST interface that allows unstructured data to be stored and accessed at a massive scale in block blobs.
+	- You want your application to support streaming and random access scenarios.
+    - You want to be able to access application data from anywhere.
+	- Endpoint: http://myaccount.blob.core.windows.net/mycontainer/myblob
+	- Up to 500 TiB containers and Up to about 4.75 TiB per block blob
+  - Azure Disks:
+    - Exclusive to a single virtual machine. Files within the VHD cannot be accessed.
+    - Provides client libraries and a REST interface that allows data to be persistently stored and accessed from an attached virtual hard disk.
+	- You want to lift and shift applications that use native file system APIs to read and write data to persistent disks.
+	- You want to store data that is not required to be accessed from outside the virtual machine to which the disk is attached.
+	- 4 TiB disk
+	
 ### Azure Mobile Apps
 - Azure Mobile Apps: Provides capabilities (PaaS services) to make the development of Mobile Apps much more easy.
 - Cross Platform Applications: Cross platform support (Windows, iOS, Andriod, HTML5, Xamarin, Apache Cordova.
