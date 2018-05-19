@@ -878,6 +878,21 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Enterprise metadata catalog of all data sources.
   - contains definitions, locations, tags and other information.
   - Can be used to restrict access.
+- Accelerated Networking:
+  - 30Gbps networking throughput when VM's are running on the same virtual network
+  - Only supports recent versions: Windows Server 2016 Datacenter, Windows 2016 R2 DataCenter, some of the latest linux versions (Ubutu, Centos, etc.)
+  - Only computed uptimized instances are supports (D, E or F series with 2/4 CPU's)
+  - Virtual switch has been taken out
+- VM reserved instances:
+  - one or three year contract with up to 72% cost savings
+- Availability Zones
+  - Currently 5 regions are supported (Central IS, France Central, East US 2, West Europe, Southeast Asia)
+  - If deployed on at least two AZ's the garanteed uptime is 99.99% for VM's
+  - In the same Availability Set uptime is 99.95%
+  - Single instance virtual machine using premium storage the uptime is 99.9%
+- Virtual Network Service Endpoints
+  - Security feature that allows to connect networks over the private network instead using the public network. Ties a virtual network to a specific Azure service.
+  - Azure Storage, SQL Database, Cosmos DB, SQL Data Warehouse
 
 ### Big Data
 - HDInsight for ETL:
