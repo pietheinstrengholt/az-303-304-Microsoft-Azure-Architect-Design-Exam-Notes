@@ -932,3 +932,44 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Azure Analysis Services provides enterprise-grade data modeling in the cloud.
   - It is a fully managed platform as a service (PaaS), integrated with Azure data platform services.
   - With Analysis Services, you can mashup and combine data from multiple data sources, define metrics, and secure your data in a single, trusted semantic data model.
+
+### Azure Serverless
+- Serverless:
+  - Function as a service, everything is managed, even the run-time.
+  - Azure functions, Azure Logic Apps, Azure Bots, Machine Learning
+  - Integration with Azure Storage and Azure Database via API's
+  - Event-driven
+  - No concept of continues running.
+  - Code is expected to be small, just a function.
+- Azure Functions Overview:
+  - Respond to an event, e.g. call to url (http), timed events, Github webhook, Blob, etc.
+  - Functions have a start and a finish
+  - Funcntions have an input and output
+  - Should be single purpose
+  - Preferably a-synchronous
+  - Languages supported: C#, F#, NodeJs, Java, PHP, Bash or anything executable.
+  - Two models:
+    - Paying for the consumption plan
+    - Option to add a function to a App Service Plan, alongside with the web, mobile and API app.
+  - Trigger: is somehting that can cause the function to run. 
+    - Can be schedule, HTTP, Events from Event Hub, Storage events (Blovs, Queues), Queues and Topics from Service Bus, NoSQL DB from Cosmos DB, Microsoft Graph Events.
+  - Binding: is an action that a function can use as input or ouput
+    - Input bindings: Storage (Blobs and Tables), SQL Data, NoSQL data from Cosmos DB, Microsoft Graph (Excel, OneDrive, Events, Auth tokens, etc.)
+    - Output bindings: HTTP output, Storage (Blobs, Queues, Tables), Events from Event Hub, Queues and topics from Service Bus, SQL Data, NoSQL Data from CosmosDB, Push Notifications, Twilio SMS, SendGrid Email, Microsoft Graph (Excel, Onedrive, Outlook email, Graph events)
+- Logic Apps:
+  - Workflow-as-a-Service
+  - Very much like Windows Workflow Foundation
+  - A task progresses through a series of steps
+  - Triggers: time based/schedule, http, polling http, polling API, Webhook HTTP
+  - Actions: Branching based on conditions (if-then), Looping, Calling an Azure API, Calling an external API, Invoke an Azure function, Wait, Manipulate data, Call other Logic App.
+  - Logic App Builder:
+    - Logic Apps can be built using a visual interface
+    - Boxes and lines, drag and drop
+    - Logic apps can be created without any coding
+    - Dozen of connectors, Dropbox, Google Drive, Facebook, Twitter, Salesforce, etc.
+  - ARM templates:
+    - Logic Apps can be created as Azure Resource Manager templates
+    - Same JSON template language used to create VMs or other Azure resources
+    - Can use Powershell or CLI to deploy templates
+    - Can be used for Desires State Configuration or keeping Logic App "code" in source control like Git
+  - SDK: Vistual Studio 2015, Vistual Studio 2017
