@@ -746,10 +746,13 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - cloud and infra automation
   - available for Azure, AWS, Google Cloud, VMWare
   - Powerful but complex, manifests and modules
-- Desired State Configuration (DSC):
+- Azure Automation / previousely Desired State Configuration (DSC):
   - forcing a desired state
   - ensures that the state remains in predefined consistent setting, e.g. check the security settings, e.g. check modules installed, e.g. avoid software to be installed.
-- PowerShell can be used to enfore DSC.
+  - Process automation = automates frequent, time-consuming, and error-prone cloud management tasks
+  - Configuration management = apply configurations to virtual or physical machines from a DSC Pull Server
+  - Update management = Update Windows and Linux systems across hybrid environments
+  - PowerShell can be used to enfore DSC.
   - Azure Automation can turn those scripts into scheduled tasks that run in the cloud.
 
 ### New services
