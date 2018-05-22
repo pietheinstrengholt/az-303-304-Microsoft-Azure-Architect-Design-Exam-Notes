@@ -457,6 +457,10 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Supports live encoding. Uses streaming endpoints.
   - Supports previews, Media indexer for closed captions and transcripts.
   - Checks quality of the stream. Archive and DRM (AES Clear Key dynamic encryption).
+- Azure Media Analytics:
+  - Media Analytics is a collection of speech and vision components 
+  - Paas to derive actionable insights from video files.
+  - Uses the following components: Indexer (make content searchable), Hyperlapse (video stabilization and time-lapse), Motion Detector, Face Detector, Video summarization (selecting interesting snippets), Optical character recognition (OCR), Scalable face redactio, Content Moderation
 
 ### Compute Intensive Applications
 - For jobs that can not be handled sequential
