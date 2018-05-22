@@ -34,6 +34,9 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 - Ingress/Egress:
   - Ingress: Data inbound to Azure. No charges for ingress.
   - Egress: Data outbound to Azure. There are charges for egress, unless using a metered ExpressRoute connection.
+- Virtual Network (VNet) service endpoints:
+  - Extends your virtual network private address space and the identity of your VNet to the Azure services, over a direct connection.
+  - Traffic from your VNet to the Azure service always remains on the Microsoft Azure backbone network, so no exposure to the outside world.
 
 ### Azure Compute
 - Azure Compute:
@@ -891,7 +894,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 - VM reserved instances:
   - one or three year contract with up to 72% cost savings
 - Availability Zones
-  - Currently 5 regions are supported (Central IS, France Central, East US 2, West Europe, Southeast Asia)
+  - Currently 5 regions are supported (Central US, France Central, East US 2, West Europe, Southeast Asia)
   - If deployed on at least two AZ's the garanteed uptime is 99.99% for VM's
   - In the same Availability Set uptime is 99.95%
   - Single instance virtual machine using premium storage the uptime is 99.9%
