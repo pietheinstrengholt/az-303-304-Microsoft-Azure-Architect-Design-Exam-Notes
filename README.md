@@ -898,6 +898,17 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 - Virtual Network Service Endpoints
   - Security feature that allows to connect networks over the private network instead using the public network. Ties a virtual network to a specific Azure service.
   - Azure Storage, SQL Database, Cosmos DB, SQL Data Warehouse
+- Azure Event Grid:
+  - Azure Event Grid allows you to easily build applications with event-based architectures.
+  - Event Grid has built-in support for events coming from Azure services, like storage blobs and resource groups.
+  - Uses the following concepts: 
+    - Events - What happened.
+    - Event sources/publishers - Where the event took place.
+    - Topics - The endpoint where publishers send events.
+    - Event subscriptions - The endpoint or built-in mechanism to route events, sometimes to multiple handlers. Subscriptions are also used by handlers to intelligently filter incoming events.
+    - Event handlers - The app or service reacting to the event.
+  - Event sources: Azure Subscriptions (management operations), Custom Topics, Event Hubs, IoT Hub, Media Services, Resource Groups (management operations), Service Bus, Storage Blob, Storage General-purpose v2 (GPv2)
+  - Event handlers: Azure Automation, Azure Functions, Event Hubs, Hybrid Connections, Logic Apps, Microsoft Flow, Queue Storage, WebHooks
 
 ### Big Data
 - HDInsight for ETL:
