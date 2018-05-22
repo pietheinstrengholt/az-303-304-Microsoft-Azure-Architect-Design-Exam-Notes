@@ -468,7 +468,11 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Azure Batch creates and manages a pool of compute nodes (virtual machines), installs the applications you want to run, and schedules jobs to run on the nodes. 
   - Includes job scheduling as a service, application lifecycle management, budget, quotas, users and limites.
   - There is no cluster or job scheduler software to install, manage, or scale. Instead, you use Batch APIs and tools, command-line scripts, or the Azure portal to configure, manage, and monitor your jobs.
-  - Batch works well with intrinsically parallel (also known as "embarrassingly parallel") workloads. 
+  - Batch works well with intrinsically parallel (also known as "embarrassingly parallel") workloads.
+- Azure Batch AI:
+  - Parallel exeucution of Deep Learning- and AI-models using GPU's.
+  - Uses frameworks like CNTK, TensorFlow, Chainer, etc.
+  - Contains Jupyter Notebooks
 
 ### Designing Long Running Applications
 - Jobs that take days, weeks, with the risk of interupption.
