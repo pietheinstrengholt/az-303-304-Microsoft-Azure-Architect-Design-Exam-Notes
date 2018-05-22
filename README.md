@@ -8,6 +8,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 - Availability zones:
   - An Availability Zone is a physically separate zone within an Azure region. There are three Availability Zones per supported Azure region. 
   - Each Availability Zone has a distinct power source, network, and cooling, and is logically separate from the other Availability Zones within the Azure region.
+- VNet Peeting: Global VNet Peering enables resources in your virtual network to communicate across Azure regions privately through the Microsoft backbone. VMs across virtual networks can communicate directly without gateways, extra hops, or transit over the public internet.
 
 ### Azure Virtual Networks
 - IP Addresses:
@@ -22,6 +23,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Associated with vnets, subnets, vm's.
   - When Associated with a subnet the ACL is applied on that subnet.
   - Can only be applied within a region.
+  - Service Tags simplifies the security definition for Virtual Networks, so you can define larger, more complex network security policies with fewer rules, based on tags, e.g. Storage, Sql, and AzureTrafficManager tags.
 - Resource groups: 
   - Allows to operate on a group of resources.
   - Allows access control, billing, in-group communication.
@@ -224,7 +226,9 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 	  - With Azure Active Directory Privileged Identity Management (PIM), you can manage, control, and monitor access to Azure Resources within your organization.
 	  - Identity Protection uses adaptive machine learning algorithms and heuristics to detect anomalies and risk events that may indicate that an identity has been compromised.
 	- Managed Service Identity
-	  - Managed Service Identity (MSI) is a public preview feature of Azure Active Directory.
+	  - Managed Service Identity (MSI) is a public preview feature of Azure Active Directory. Managed Service Identity (MSI) gives Azure services an automatically managed identity in Azure Active Directory (Azure AD), so there's no need to store the credentials within the service.
+	    - System Assigned Identity = on the Azure service instance. Identity is automatically trusted, but als removed when resources are deleted.
+	    - User Assigned Identity (public preview) = Based on subscription level.
 	  - Azure Key Vault provides a way to securely store credentials and other keys and secrets, but your code needs to authenticate to Key Vault to retrieve them. Managed Service Identity (MSI) makes solving this problem simpler by giving Azure services an automatically managed identity in Azure Active Directory (Azure AD).
 	- Active Directory editions [^](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-whatis#choose-an-edition) [^](https://azure.microsoft.com/en-us/pricing/details/active-directory/)
       - **Free** - manage users, synchronize with on-premises Active Directory, establish SSO across Azure and Office 365, and access SaaS applications in the Azure AD application gallery
@@ -808,6 +812,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Azure Container Instances offers the fastest and simplest way to run a container in Azure, without having to manage any virtual machines and without having to adopt a higher-level service.
     - Azure Container Instances is a great solution for any scenario that can operate in isolated containers, including simple applications, task automation, and build jobs.
 	- Co-scheduled groups: Azure Container Instances supports scheduling of multi-container groups that share a host machine, local network, storage, and lifecycle. This enables you to combine your main application container with other supporting role containers, such as logging sidecars.
+    - Azure Container Networking: https://github.com/Azure/azure-container-networking
   - If you are looking to deploy your application in Linux environment and are comfortable with an orchestrator such as Swarm, Kubernetes or DC/OS, use ACS. A typical 3 tier application (such as a web front end, a caching layer, a API layer and a database layer) can be easily container-ized with 1 single dockerfile (or docker-compose file). It can be continuously decomposed into smaller services gradually. This approach provides an immediate benefit of portability of such an application. Containers is Open technology and there is great community support around containers.
 - API Management for API Apps and Serverless Apps:
   - API Management (APIM) helps organizations publish APIs to external, partner, and internal developers to unlock the potential of their data and services.
