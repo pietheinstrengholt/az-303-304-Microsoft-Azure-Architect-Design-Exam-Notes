@@ -70,12 +70,12 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Easy migrate existing API's
   - supports CORS
   - Access control and supports integration with Logic Apps. 
-  - Logic Apps:
-    - Logic Apps helps you build, schedule, and automate processes as workflows so you can integrate apps, data, systems, and services across enterprises or organizations.
-    - Build workflows.
-	- Trigger based (If this then that), causes actions to happen. 
-	- Works with templates. 
-	- Can be created in the browser.
+- Logic Apps:
+  - Logic Apps helps you build, schedule, and automate processes as workflows so you can integrate apps, data, systems, and services across enterprises or organizations.
+  - Build workflows.
+     - Trigger based (If this then that), causes actions to happen. 
+     - Works with templates. 
+     - Can be created in the browser.
 - Virtual Machines: 
   - Virtual Machines which come in many different flavors and types.
   - Microsoft limits you to 10,000 VMs in a single subscription.
