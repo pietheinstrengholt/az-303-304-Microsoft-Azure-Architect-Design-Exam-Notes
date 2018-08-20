@@ -1003,3 +1003,116 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - Can use Powershell or CLI to deploy templates
     - Can be used for Desires State Configuration or keeping Logic App "code" in source control like Git
   - SDK: Vistual Studio 2015, Vistual Studio 2017
+  
+  
+## Overview of all Azure Service plans, SLA's
+
+### Virtual machines
+- General purpose: A0-7, Av2, B, D, DS, Dv2, DSv2, Dv3, Dsv3
+- Compute optimized: F, Fs, Fsv2
+- Memory optimized: D, DS, Dv2, DSv2, Ev3, Esv3, G, GS, M
+- Storage optimized: Ls
+- GPU: NC, NCv2, NCv3, ND, NV
+- High-performance: A8-11, H
+
+### App Service Plans
+- Free & Shared
+  - 1 GB RAM
+  - Custom domains
+- Basic
+  - 1.75, 3.5 or 7 GB RAM
+  - 10 GB Storage
+  - Custom domains
+  - SSL
+  - Up to 3 instances
+- Standard:
+  - 1.75, 3.5 or 7 GB RAM
+  - 50 GB Storage
+  - Custom domains
+  - SSL
+  - Daily backup
+  - 5 deployment slots
+  - Up to 10 instances
+  - Traffic Manager
+- Standard:
+  - 1,2 or 4 cores
+  - 1.75, 3.5 or 7 GB RAM
+  - 250 GB Storage
+  - Custom domains
+  - SSL
+  - 50 x Daily backup
+  - 20 deployment slots
+  - Up to 20 instances
+  - Traffic Manager
+- Isolated:
+  - 1,2 or 4 cores
+  - 3.5, 7 or 14 GB RAM
+  - 250 GB Storage
+  - Up to 100 instances
+  - ASE, own VNET, Private app access
+
+### Redis
+- Basic: single node cache, NO SLA
+- Standard: replicated between two nodes, SLA includes
+- Premium: bigger workloads, better performance, disaster recovery, 53+ limit removed, persistence storage
+
+### Azure Load Balancer
+- Basic: free to use, supports monitoring and NAT
+- Standard: scales up to 1000 VM's, diagnostics, NSG support, high reliability
+
+### Azure VPN
+- Basic: 10 site-to-site, 128 point-to-site, 100Mbps
+- VPNGw1: 30 site-to-site, 128 point-to-site, 650Mbps
+- VPNGw2: 30 site-to-site, 128 point-to-site, 1Gbps
+- VPNGw3: 30 site-to-site, 128 point-to-site, 1.25Gbps
+
+### Azure Search
+- Free: Shared service, 50 MB, 3 indexes, 10.000 documents, no scale out
+- Basic: 2 GB, 5 indexes, scale up to 3 units
+- Standard S1: 25GB, 50 indexes, 36 units, 12 partitions and 12 replica's
+- Standard S1: 200GB, 50 indexes, 36 units, 12 partitions and 12 replica's
+- Standard S1: 200GB, 1000 indexes, 36 units, 12 partitions and 12 replica's
+
+### Azure Service Catalog:
+- Free: 5,000 data assets, all users
+- Standard: 100.000 data assets, asset level security and visability
+
+### SQL Server backup
+- Basic: 7 days
+- Standard: 35 days
+- Premium: 35 days
+
+### Azure Active Directory
+- Free: basic features, 500.000 objects, SSO, support for Azure AD Connect
+- Basic: no object limit, SLA 99.9%, Application proxy and self-service password support
+- Premium P1: Advanced reporting, MFA, MDM auto-enrollment, cloud app discovery and azure ad connect health
+- Premium P2: Identity protection and PIM
+
+### Azure key vault
+- Standard: offers geo scaling and availability
+- Premium: adds additional support for Hardware security modules
+
+### Azure security center
+- Free: security policies, security assessments and recommendations
+- Standard: Adds hybrid environment support, thread detection.
+
+### Azure IoT Hub
+- Free: 8.000 messages per unit a day
+- Standard S1: 400.0000 messages per unit a day
+- Standard S2: 6.000.000 messages per unit a day
+- Standard S3: 300.000.000 messages per unit a day
+
+### Azure Event Hub
+- Basic: 20 throughput units with 1 MB/s ingress and 2 MB/s egress. Message size = 256kb. Retention 1 day, 100 connections
+- Standard: 20 throughput units with 1 MB/s ingress and 2 MB/s egress. Message size = 256kb. Retention 1 day, 1.000 connections
+- Dedicated: 20 throughput units with 1 MB/s ingress and 2 MB/s egress. Message size = 1 MB. Retention 7 days, 25.000 connections
+
+### Azure Service Bus
+- Basic: 256kb messages
+- Standard: de-duplication, topics, subscriptions, transactions, sessions
+- Premium: 1 MB messages, de-duplication, topics, subscriptions, transactions, sessions
+
+### Notification hubs
+- Free: 1 million messages per month, 500 active devices, 100 hubs
+- Basic: 10 million messages per month, 100 name spaces, 200.000 active devices, 100 hubs, SLA, limited telemetry
+- Standard: 10 million messages per month, unlimited name spaces, 10.000.000 active devices, 100 hubs, SLA, rich telemetry, push, bulk import, multitendency
