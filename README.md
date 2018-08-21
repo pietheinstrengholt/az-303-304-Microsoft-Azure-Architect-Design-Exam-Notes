@@ -586,10 +586,10 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 - Disaster Recovery:
   - Use deployment slots for minimal downtime.
   - Use multiple instances for minimal downtime.
-  - Thinks about back strategy.
+  - Thinks about backup strategy.
   - Backups are stored as blobs, Azure Storage Account is needed to store backups on.
   - High Availability consists of Availability, Scalability, Fault Tolerance.
-  - Recovery Time Objective (RTO) = maximym amount of time to restore application functionality.
+  - Recovery Time Objective (RTO) = maximum amount of time to restore application functionality.
   - Recovery Point Objective (RPO) = acceptable time window of data loss.
   - Locally redundant storage (LRS) and Zone Redundant Storage (ZRS) storage stores 3 copies of your data in a single region, while Azure Geo Redundant Storage (GRS) and Read-access Azure Geo Redundant Storage (RA-GRS) stores 6 copies across two regions.
   - Azure Managed Disks
@@ -873,10 +873,10 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Cloud appliance.
   - Used for back-ups, archiving using secure channel.
   - StorSimple Virtual Array is a virtual machine. 
-  - SQL Server Stretch DB:
-    - Allows to scale SQL Server 2016 'cold data' into the Cloud.
-    - Uses your existing SQL Server instance.
-    - Good alternative to buying more local storage. Works on table level.
+- SQL Server Stretch DB:
+  - Allows to scale SQL Server 2016 'cold data' into the Cloud.
+  - Uses your existing SQL Server instance.
+  - Good alternative to buying more local storage. Works on table level.
 - Azure Database for PostgreSQL and MySQL:
   - Fully managed PostgreSQL or MySQL.
   - Has high availability.
@@ -1003,7 +1003,6 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
     - Can use Powershell or CLI to deploy templates
     - Can be used for Desires State Configuration or keeping Logic App "code" in source control like Git
   - SDK: Vistual Studio 2015, Vistual Studio 2017
-  
   
 ## Overview of all Azure Service plans, SLA's
 
