@@ -473,6 +473,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Includes job scheduling as a service, application lifecycle management, budget, quotas, users and limites.
   - There is no cluster or job scheduler software to install, manage, or scale. Instead, you use Batch APIs and tools, command-line scripts, or the Azure portal to configure, manage, and monitor your jobs.
   - Batch works well with intrinsically parallel (also known as "embarrassingly parallel") workloads.
+  - Uses a JSON for deployment, not ARM templates
 - Azure Batch AI:
   - Parallel exeucution of Deep Learning- and AI-models using GPU's.
   - Uses frameworks like CNTK, TensorFlow, Chainer, etc.
@@ -674,7 +675,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Maintenance is planned.
   - Keep you applications across multiple update domains to avoid downtime.
   - Maximum of 20 update domains per role service.
-  - Default = 5 update domains.
+  - Default = 5 update domains, 3 fault domains
   - Deployment Slots = staging copy, which allows to fast deployment. Easy roll-back.
 - Security Center:
   - Single dashboard for overall security health of Azure resources.
@@ -713,7 +714,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Requires vault credentials certificates and a passphrase.
   - Limit of 1.7TB per volume can be backed up.
   - Data Protection Manager:
-    - Is part of system center.
+    - Is part of System Center.
     - More powerfull backup solution.
     - Supports bare meta recovery.
     - Requires agent to be installed.
@@ -844,7 +845,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
   - Increases or decreases based on the performance (I/O or CPU) or fixed schedules.
   - Limit of 1000 generic.
   - 300 custom.
-  - Recommended to use placement groups (above 100 use singlePlacementGroup= false).
+  - Recommended to use placement groups (above 100 use singlePlacementGroup=false).
   - Don't get public IP's by default.
   - Use a load balancer and jump boxes to connect.
   - There is no additional cost to scale sets. You only pay for the underlying compute resources such as the VM instances, load balancer, or Managed Disk storage. 
@@ -1097,7 +1098,7 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 
 ### Azure IoT Hub
 - Free: 8.000 messages per unit a day
-- Standard S1: 400.0000 messages per unit a day
+- Standard S1: 400.000 messages per unit a day
 - Standard S2: 6.000.000 messages per unit a day
 - Standard S3: 300.000.000 messages per unit a day
 
@@ -1114,4 +1115,4 @@ Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-5
 ### Notification hubs
 - Free: 1 million messages per month, 500 active devices, 100 hubs
 - Basic: 10 million messages per month, 100 name spaces, 200.000 active devices, 100 hubs, SLA, limited telemetry
-- Standard: 10 million messages per month, unlimited name spaces, 10.000.000 active devices, 100 hubs, SLA, rich telemetry, push, bulk import, multitendency
+- Standard: 10 million messages per month, unlimited name spaces, 10.000.000 active devices, 100 hubs, SLA, rich telemetry, push, bulk import, multi-tendency
