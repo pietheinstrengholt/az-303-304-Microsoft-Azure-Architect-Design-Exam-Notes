@@ -1,5 +1,5 @@
 # Architecting Microsoft Azure Solutions (70-535)
-Disclaimer: This guide is a work in progress as I am preparing for the Exam 70-535. Most of the content is available in public domain, so this repository is just a collection for easy reference.
+Disclaimer: I passed the 70-535 exam with a score of 800! As a result I won't be maintaining this anymore. Feel free to create a pull request. Another disclaimer I want to make is that all of the content is available in public domain, so this repository is just a collection for easy reference.
 
 ### Azure Geos and Regions
 - 42 regions globally
